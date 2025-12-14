@@ -97,16 +97,18 @@ function renderItems(items) {
 
     return `
       <article class="card">
-        <img
-  class="product-img"
-  src="${imgSrc}"
-  alt="${(p.brand ?? "") + " - " + (p.flavor ?? "")}"
-  loading="lazy"
-  referrerpolicy="no-referrer"
-  data-full="${imgSrc}"
-  data-caption="${(p.brand ?? "") + " — " + (p.flavor ?? "")}"
-  onerror="this.src='./images/placeholder.png'; this.onerror=null;"
-/>
+        <div class="product-img-wrap">
+  <img
+    class="product-img"
+    src="${imgSrc}"
+    alt="${(p.brand ?? "") + " - " + (p.flavor ?? "")}"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    data-full="${imgSrc}"
+    data-caption="${(p.brand ?? "") + " — " + (p.flavor ?? "")}"
+    onerror="this.src='./images/placeholder.png'; this.onerror=null;"
+  />
+</div>
 
         <h3>${p.flavor ?? ""}</h3>
         <div class="meta">
