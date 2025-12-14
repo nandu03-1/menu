@@ -67,7 +67,7 @@
     "brand": "Geek Bar Pulse 15K",
     "flavor": "Rising Sun",
     "price": 25,
-    "image": ""
+    "image": "images/geekbar-pulse-15k/rising-sun.webp"
   },
    {
     "id": 4,
@@ -88,7 +88,7 @@
     "brand": "Geek Bar Pulse 15K",
     "flavor": "Strawberry CC",
     "price": 25,
-    "image": ""
+    "image": "images/geekbar-pulse-15k/strawberry-cc.webp"
   },
  {
     "id": 12,
@@ -137,7 +137,7 @@
     "brand": "Geek Bar Pulse 15K",
     "flavor": "Nectarine Ice",
     "price": 25,
-    "image": "images/geekbar-pulse-15k/nectarne-ice.png"
+    "image": "images/geekbar-pulse-15k/nectarne-ice.webp"
   },
    {
     "id": 19,
