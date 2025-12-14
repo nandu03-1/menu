@@ -143,6 +143,30 @@ input::placeholder { color: rgba(166,173,187,.75); }
   line-height: 1.35;
 }
 
+/* ✅ Fixed preview box so images never overflow or misalign */
+.product-img-wrap {
+  width: 100%;
+  height: 230px; /* adjust: 200 / 230 / 260 based on your images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/* ✅ Image fits fully inside the preview box (no cropping) */
+.product-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
 .footer-card {
   margin: 18px 0 30px;
   background: rgba(18,20,27,.65);
@@ -205,35 +229,54 @@ input::placeholder { color: rgba(166,173,187,.75); }
   .summary { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; }
   .info { grid-template-columns: 1fr; }
+
+  /* Slightly smaller preview box on phones */
+  .product-img-wrap { height: 210px; }
 }
+
 /* Fullscreen image modal */
-/* Image container – fixed preview box */
-.product-img-wrap {
-  width: 100%;
-  height: 200px;                 /* 🔑 controls card consistency */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.04);
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  margin-bottom: 10px;
-  overflow: hidden;
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  place-items: center;
+  z-index: 9999;
+  padding: 18px;
 }
 
-/* Actual image */
-.product-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;           /* 🔑 show full image */
-  cursor: zoom-in;
-}
-.product-img-wrap {
-  height: 230px;
+.img-modal.show {
+  display: grid;
 }
 
+.img-modal-image {
+  max-width: min(100%, 1000px);
+  max-height: 80vh;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.02);
+  object-fit: contain;
+}
 
+.img-modal-caption {
+  margin-top: 10px;
+  color: rgba(255,255,255,.85);
+  font-size: 14px;
+  text-align: center;
+  max-width: min(100%, 1000px);
+}
 
-
+.img-modal-close {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(18,20,27,.6);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.img-modal-close:hover {
+  border-color: rgba(255,255,255,.35);
+}
