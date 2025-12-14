@@ -1,9 +1,41 @@
 [
+  // =========================
+  // Geek Bar Pulse 15K — $25
+  // =========================
   {
     "id": 1,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Crazy Melon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/crazy-melon.png"
+  },
+  {
+    "id": 2,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Blackberry Fab",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-blackberry-fab.png"
+  },
+  {
+    "id": 3,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Sour Gush",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/sour-gush.png"
+  },
+  {
+    "id": 4,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Iceymintz",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/iceymintz.png"
+  },
+  {
+    "id": 5,
     "brand": "Geek Bar Pulse 15K",
     "flavor": "Blue Razz Ice",
     "price": 25,
     "image": "images/geekbar-pulse-15k/blue-razz-ice.png"
   }
+
 ]
