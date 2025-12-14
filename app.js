@@ -5,7 +5,7 @@
 // =========================
 
 const SHOP = {
-  name: "Stardust Smoke Shop",
+  name: "Stardust Smoke Shop Hillsborough",
   phone: "+19088295361",
   phoneDisplay: "(908) 829-5361",
   address: "626 US-206 Unit-4, Hillsborough Township, NJ 08844",
