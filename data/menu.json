@@ -714,7 +714,8 @@
     "flavor": "Jolly Rancher Ice",
     "price": 10,
     "image": "images/lava-plus/jri.webp"
-  },{
+  },
+  {
     "id": 201,
     "brand": "Lava Plus",
     "flavor": "Kiwi Strawberry",
