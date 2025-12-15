@@ -18,10 +18,11 @@ const SHOP = {
 
 // ✅ Configure which brands use LIST view + header info
 const BRAND_META = {
-  "Geek Bar Pulse 15K": { view: "list", puffs: "15,000 puffs", price: 25 },
-  "Geek Bar Pulse X 25K": { view: "list", puffs: "25,000 puffs", price: 35 }
-  // Add more later if you want:
-  // "Oilio Meteor 35K": { view: "list", puffs: "35,000 puffs", price: "Kit $28 / Pod $25" }
+  //"Geek Bar Pulse 15K": { view: "list", puffs: "15,000 puffs", price: 25 },
+  //"Geek Bar Pulse X 25K": { view: "list", puffs: "25,000 puffs", price: 35 },
+  // "Oilio Meteor 35K": { view: "list", puffs: "35,000 puffs", price: "Kit $28 / Pod $25" },
+  //"Flair Sniper 45K": { view: "list", puffs: "45,000 puffs", price: 35 },
+  "Lava Plus": { view: "list", puffs: "2600 puffs", price: 10 }
 };
 
 const el = (id) => document.getElementById(id);
