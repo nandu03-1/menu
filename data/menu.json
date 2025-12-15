@@ -890,24 +890,28 @@
     "price": 35,
     "image": "images/flair-sniper/blue.png"
   },
+  {
   "id": 301,
     "brand": "Flair Sniper 45K",
     "flavor": "Bombsicle",
     "price": 35,
     "image": "images/flair-sniper/bomb.png"
-  },{
+  },
+  {
   "id": 301,
     "brand": "Flair Sniper 45K",
     "flavor": "Clear Chill",
     "price": 35,
     "image": "images/flair-sniper/cc.png"
-  },{
+  },
+  {
   "id": 301,
     "brand": "Flair Sniper 45K",
     "flavor": "Cherry Strike",
     "price": 35,
     "image": "images/flair-sniper/cs.png"
-  },{
+  },
+  {
   "id": 301,
     "brand": "Flair Sniper 45K",
     "flavor": "Frosted Blue",
