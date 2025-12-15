@@ -881,12 +881,5 @@
     "flavor": "Watermelon With Mint",
     "price": 10,
     "image": "images/lava-plus/watermelonwithmint.webp"
-  },
-  {
-    "id": 201,
-    "brand": "Lava Plus",
-    "flavor": "",
-    "price": 10,
-    "image": "images/lava-plus/clearice.webp"
   }
 ]
