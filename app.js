@@ -19,7 +19,7 @@ const HOME_PROMOS = [
     title: "🔥🔥🔥",
     sub: "Geek Bar 15K 2 for $40",
     image: "./images/promos/geek15k.png",
-    brand: "Geek Bar Pulse 15K" "
+    brand: "Geek Bar Pulse 15K"
   },
   {
     title: "🔥🔥🔥",
@@ -28,6 +28,7 @@ const HOME_PROMOS = [
     brand: "Geek Bar Pulse X 25K"
   }
 ];
+
 
 /* 🧠 Brands that use LIST view */
 const BRAND_META = {
@@ -186,11 +187,30 @@ function openImageModal(src, caption) {
 }
 
 function setupImageModal() {
-  el("imgModalClose").onclick = () => el("imgModal").classList.remove("show");
-  el("imgModal").onclick = (e) => {
-    if (e.target.id === "imgModal") el("imgModal").classList.remove("show");
+  const modal = el("imgModal");
+  const closeBtn = el("imgModalClose");
+
+  closeBtn.onclick = () => modal.classList.remove("show");
+
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.classList.remove("show");
   };
+
+  // Attach once
+  if (!document.body.dataset.imgModalBound) {
+    document.addEventListener("click", (e) => {
+      const img = e.target.closest(".product-img");
+      if (!img) return;
+
+      const src = img.getAttribute("data-full") || img.getAttribute("src");
+      const cap = img.getAttribute("data-caption") || "";
+      openImageModal(src, cap);
+    });
+
+    document.body.dataset.imgModalBound = "true";
+  }
 }
+
 
 /* ---------- Hybrid Router ---------- */
 function routeView() {
