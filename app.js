@@ -19,14 +19,14 @@ const HOME_PROMOS = [
     title: "Geek Bar 15K",
     sub: "$25",
     price: "2 for $40",
-    image: "./images/promos/geek15k.png",
+    image: "./images/promos/geek15k.jpg",
     brand: "Geek Bar Pulse 15K"
   },
   {
     title: "GeekBar Pulse X 25k",
-    sub: "Geek Bar Pulse X 25K",
+    sub: "$30",
     price: "2 for $50",
-    image: "./images/promos/geek25k.png",
+    image: "./images/promos/geek25k.jpg",
     brand: "Geek Bar Pulse X 25K"
   }
 ];
