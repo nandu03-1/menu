@@ -33,7 +33,7 @@ const HOME_PROMOS = [
     title: "Lava Plus",
     sub: "$10",
     price: "",
-    image: "./images/promos/lavaplus.jpg",
+    image: "./images/promos/lavaplus.webp",
     brand: "Lava Plus"
   },
    {
