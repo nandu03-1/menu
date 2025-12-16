@@ -16,15 +16,17 @@ const SHOP = {
 /* 🔥 Home promo cards */
 const HOME_PROMOS = [
   {
-    title: "🔥🔥🔥",
-    sub: "Geek Bar 15K 2 for $40",
-    image: "./images/promos/geek15k.png",
+    title: "Geek Bar 15K",
+    price: "25"
+    sub: "2 for $40",
+    image: "./images/promos/geek15k.jpg",
     brand: "Geek Bar Pulse 15K"
   },
   {
-    title: "🔥🔥🔥",
-    sub: "GeekBar 25k 2 for $50",
-    image: "./images/promos/geek25k.png",
+    title: "GeekBar Pulse X 25k",
+    price: "30"
+    sub: "2 for $50",
+    image: "./images/promos/geek25k.jpg",
     brand: "Geek Bar Pulse X 25K"
   }
 ];
