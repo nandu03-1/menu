@@ -17,15 +17,13 @@ const SHOP = {
 const HOME_PROMOS = [
   {
     title: "Geek Bar 15K",
-    price: "25"
-    sub: "2 for $40",
+    sub: "Each $25 - 2 for $40",
     image: "./images/promos/geek15k.jpg",
     brand: "Geek Bar Pulse 15K"
   },
   {
     title: "GeekBar Pulse X 25k",
-    price: "30"
-    sub: "2 for $50",
+    sub: "Each $30 - 2 for $50",
     image: "./images/promos/geek25k.jpg",
     brand: "Geek Bar Pulse X 25K"
   }
