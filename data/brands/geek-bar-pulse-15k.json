@@ -1,1 +1,296 @@
-
+[
+  {
+    "id": 1,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Crazy Melon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/crazy-melon.png"
+  },
+  {
+    "id": 2,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Blackberry Fab",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-blackberry-fab.png"
+  },
+  {
+    "id": 3,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Sour Gush",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/sour-gush.png"
+  },
+  {
+    "id": 4,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Iceymintz",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/iceymintz.png"
+  },
+  {
+    "id": 5,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Blue Razz Ice",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/blue-razz-ice.png"
+  },
+  {
+    "id": 6,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Wild Berry Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/wild-berry-savers.png"
+  },
+   {
+    "id": 7,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Pineapple Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/pineapple-savers.png"
+  },
+   {
+    "id": 8,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Strawberry Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/strawberry-savers.png"
+  },
+   {
+    "id": 9,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Wild Berry Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/wild-berry-savers.png"
+  },
+   {
+    "id": 4,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Rising Sun",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/rising-sun.webp"
+  },
+   {
+    "id": 4,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Strawberry",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-strawberry.png"
+  },
+   {
+    "id": 10,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Strawberry",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-strawberry.png"
+  },
+ {
+    "id": 11,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Strawberry CC",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/strawberry-cc.webp"
+  },
+ {
+    "id": 12,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Fucking Fab",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/fucking-fab.png"
+  },
+   {
+    "id": 13,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Black Cherry",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/black-cherry.png"
+  },
+   {
+    "id": 14,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Orange Mint Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/orange-mint-savers.png"
+  },
+   {
+    "id": 15,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Pina Colada",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-pina-colada.png"
+  },
+   {
+    "id": 16,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Dragon Melon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/dragon-melon.png"
+  },
+   {
+    "id": 17,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Sour Watermelon Drop",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/sour-watermelon-drop.png"
+  },
+   {
+    "id": 18,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Nectarine Ice",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/nectarine-ice.webp"
+  },
+   {
+    "id": 19,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Raspberry Watermelon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/raspberry-watermelon.png"
+  },
+   {
+    "id": 4,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Strawberry Kiwi",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/strawberry-kiwi.png"
+  },
+   {
+    "id": 20,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Berry Bliss",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/berry-bliss.png"
+  },
+   {
+    "id": 21,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Pink Lemonade",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/pink-lemonade.png"
+  },
+   {
+    "id": 22,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Meta Moon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/meta-moon.png"
+  },
+   {
+    "id": 23,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Watermelon Ice",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/watermelon-ice.png"
+  },
+   {
+    "id": 24,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Blue Mint",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/blue-mint.png"
+  },
+   {
+    "id": 25,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Cool Mint",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/cool-mint.png"
+  },
+   {
+    "id": 26,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Juicy Peach Ice",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/juicy-peach-ice.png"
+  },
+   {
+    "id": 27,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Strawberry Banana",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/strawberry-banana.png"
+  },
+   {
+    "id": 28,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Mexico Mango",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/mexico-mango.png"
+  },
+   {
+    "id": 29,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Stonemintz",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/stonemintz.png"
+  },
+   {
+    "id": 30,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Drop Sour Savers",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/drop-sour-savers.png"
+  },
+   {
+    "id": 31,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Cherry Bomb",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/cherry-bomb.png"
+  },
+   {
+    "id": 32,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Tropical Rainbow Blast",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/tropical-rainbow-blast.png"
+  },
+   {
+    "id": 33,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen Watermelon",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-watermelon.png"
+  },
+   {
+    "id": 34,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Sour Cranapple",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/sour-cranapple.png"
+  },
+   {
+    "id": 35,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Frozen White Grape",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/frozen-white-grape.png"
+  },
+   {
+    "id": 36,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Sour Apple Ice",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/sour-apple-ice.png"
+  },
+   {
+    "id": 37,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Strawberry Mango",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/strawberry-mango.png"
+  },
+   {
+    "id": 38,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "Miami Mint",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/miami-mint.png"
+  },
+   {
+    "id": 39,
+    "brand": "Geek Bar Pulse 15K",
+    "flavor": "California Cherry",
+    "price": 25,
+    "image": "images/geekbar-pulse-15k/california-cherry.png"
+  }
+]
