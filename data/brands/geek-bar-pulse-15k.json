@@ -1,4 +1,8 @@
-[
+"brandId": "geekbar-pulse-15k",
+  "name": "Geek Bar Pulse 15K",
+  "puffs": "15,000 puffs",
+  "price": "$25",
+  "flavors":[
   {
     "id": 1,
     "brand": "Geek Bar Pulse 15K",
