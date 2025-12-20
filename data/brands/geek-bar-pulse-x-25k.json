@@ -1,1 +1,261 @@
-
+[
+{
+    "id": 101,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Sour Apple Ice",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/sour-apple-ice.png"
+  },
+   {
+    "id": 102,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Banana Taffy Freeze",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/banana-taffy-freeze.png"
+  },
+   {
+    "id": 103,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Orange Slush",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/orange-slush.png"
+  },
+  {
+    "id": 104,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Peach Perfect Slush",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/peach-perfect-slush.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Blackberry Blueberry",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/blackberry-blueberry.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Cola Slush",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/cola-slush.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Peach Jam",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/peach-jam.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "strawberry Kiwi Ice",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-kiwi-ice.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Pink Berry Lemonade",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/pink-berry-lemonade.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Watermelon Ice",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/watermelon-ice.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Raspberry Peach Lime",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/raspberry-peach-lime.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Sour Straws",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/sour-straws.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Orange Dragon",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/orange-dragon.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Strawberry Dragon",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-dragon.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Strawberry Watermelon",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-watermelon.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Cool Mint",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/cool-mint.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Blue Rancher",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/blue-rancher.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Orange Mint",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/orange-mint.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "White Peach Raspberry",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/white-peach-raspberry.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Strawberry Jam",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-jam.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Starwberry Colada",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-colada.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Blueberry Jam",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/blueberry-jam.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Raspberry Jam",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/raspberry-jam.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Bluerazz Ice",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/bluerazz-ice.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Grape Slush",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/grape-slush.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Dualicious",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/dualicious.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Sour Mango Pineapple",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/sour-mango-pineapple.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Orange Fcuking Fab",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/orange-fcuking-fab.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Blackberry B-Pop",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/blackberry-b-pop.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Pear Of Thieves",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/pear-of-thieves.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Sour Fcuking Fab",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/sour-fcuking-fab.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Miami Mint",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/miami-mint.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Grapefruit Refreshner",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/grapefruit-refresher.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Starwberry B-Pop",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/strawberry-b-pop.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Orange Jam",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/orange-jam.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Lemon Heads",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/lemon-heads.png"
+  },
+  {
+    "id": 105,
+    "brand": "Geek Bar Pulse X 25K",
+    "flavor": "Pink & Blue",
+    "price": 35,
+    "image": "images/geekbar-pulse-x-25k/pink-blue.png"
+  }
+]
