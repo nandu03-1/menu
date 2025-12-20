@@ -1,0 +1,335 @@
+{
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Clear Ice",
+    "price": 10,
+    "image": "images/lava-plus/clearice.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Apple Honey",
+    "price": 10,
+    "image": "images/lava-plus/ah.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Apple Peach Ice",
+    "price": 10,
+    "image": "images/lava-plus/api.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Banana",
+    "price": 10,
+    "image": "images/lava-plus/banana.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Black Ice",
+    "price": 10,
+    "image": "images/lava-plus/bi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Bloom",
+    "price": 10,
+    "image": "images/lava-plus/bllom.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Blueberry Raspberry Lemon",
+    "price": 10,
+    "image": "images/lava-plus/blueberryraspberrylemon.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Blue Moon",
+    "price": 10,
+    "image": "images/lava-plus/bluemoon.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Berry Mist",
+    "price": 10,
+    "image": "images/lava-plus/bm.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Banana Milkshake",
+    "price": 10,
+    "image": "images/lava-plus/bmilk.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Cherry Banana",
+    "price": 10,
+    "image": "images/lava-plus/cb.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Clear",
+    "price": 10,
+    "image": "images/lava-plus/clear.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Coffe Latte",
+    "price": 10,
+    "image": "images/lava-plus/coffeelatte.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Cool Mint",
+    "price": 10,
+    "image": "images/lava-plus/coolmint.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Cubban Tobacco",
+    "price": 10,
+    "image": "images/lava-plus/ct.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Dragon Flume",
+    "price": 10,
+    "image": "images/lava-plus/df.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Fruit Ice",
+    "price": 10,
+    "image": "images/lava-plus/fi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Fruit Blast",
+    "price": 10,
+    "image": "images/lava-plus/fruitblast.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Grapefruit Ice",
+    "price": 10,
+    "image": "images/lava-plus/gfi.png"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Guava Ice",
+    "price": 10,
+    "image": "images/lava-plus/gi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Havana Tobacco",
+    "price": 10,
+    "image": "images/lava-plus/ht.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Ice Grape",
+    "price": 10,
+    "image": "images/lava-plus/ig.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Jolly Rancher Ice",
+    "price": 10,
+    "image": "images/lava-plus/jri.webp"
+  },{
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Kiwi Strawberry",
+    "price": 10,
+    "image": "images/lava-plus/kiwis.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Lemon with Mint",
+    "price": 10,
+    "image": "images/lava-plus/lwm.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Melon Ice",
+    "price": 10,
+    "image": "images/lava-plus/melonice.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Mango Ice",
+    "price": 10,
+    "image": "images/lava-plus/mi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Miami Mint",
+    "price": 10,
+    "image": "images/lava-plus/mm.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Mojito",
+    "price": 10,
+    "image": "images/lava-plus/moj.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Orange Ice",
+    "price": 10,
+    "image": "images/lava-plus/oi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Pineapple Coconut Rum",
+    "price": 10,
+    "image": "images/lava-plus/pcr.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Peach Ice",
+    "price": 10,
+    "image": "images/lava-plus/pi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Peach Mango Watermelon",
+    "price": 10,
+    "image": "images/lava-plus/pmw.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Strawberry Banana",
+    "price": 10,
+    "image": "images/lava-plus/sb.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Strawberry Ice",
+    "price": 10,
+    "image": "images/lava-plus/si.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Strawberry Lemon Mint",
+    "price": 10,
+    "image": "images/lava-plus/slm.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Solo Mint",
+    "price": 10,
+    "image": "images/lava-plus/solomint.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Sex On The Beach",
+    "price": 10,
+    "image": "images/lava-plus/sotb.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Sour Apple Ice",
+    "price": 10,
+    "image": "images/lava-plus/sourai.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Sour Patch",
+    "price": 10,
+    "image": "images/lava-plus/sp.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Spearmint",
+    "price": 10,
+    "image": "images/lava-plus/spearmint.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Splash Ice",
+    "price": 10,
+    "image": "images/lava-plus/spi.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Strawberry Quake",
+    "price": 10,
+    "image": "images/lava-plus/strawberryquake.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Strawberry Watermelon Bubblegum",
+    "price": 10,
+    "image": "images/lava-plus/swb.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Sour Watermelon Candy",
+    "price": 10,
+    "image": "images/lava-plus/swc.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Vanilla Custard",
+    "price": 10,
+    "image": "images/lava-plus/vc.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "Watermelon With Mint",
+    "price": 10,
+    "image": "images/lava-plus/watermelonwithmint.webp"
+  },
+  {
+    "id": 201,
+    "brand": "Lava Plus",
+    "flavor": "",
+    "price": 10,
+    "image": "images/lava-plus/clearice.webp"
+  }
