@@ -1,16 +1,65 @@
 [
   {
-    "id": "geekbar-pulse-15k",
+    "id": "geek-bar-pulse-15k",
     "name": "Geek Bar Pulse 15K",
     "puffs": "15,000 puffs",
-    "price": "$25",
-    "file": "data/brands/geekbar-pulse-15k.json"
+    "priceText": "$25",
+    "dealText": "2 for $40",
+    "cardImage": "./images/promos/geek15k.jpg",
+    "file": "./data/brands/geek-bar-pulse-15k.json"
   },
   {
-    "id": "geekbar-pulse-x-25k",
+    "id": "geek-bar-pulse-x-25k",
     "name": "Geek Bar Pulse X 25K",
     "puffs": "25,000 puffs",
-    "price": "$30",
-    "file": "data/brands/geekbar-pulse-x-25k.json"
+    "priceText": "$35",
+    "dealText": "2 for $50",
+    "cardImage": "./images/promos/geek25k.jpg",
+    "file": "./data/brands/geek-bar-pulse-x-25k.json"
+  },
+  {
+    "id": "lava-plus",
+    "name": "Lava Plus",
+    "puffs": "2600 puffs",
+    "priceText": "$10",
+    "dealText": "",
+    "cardImage": "./images/promos/lavaplus.webp",
+    "file": "./data/brands/lava-plus.json"
+  },
+  {
+    "id": "flair-sniper-45k",
+    "name": "Flair Sniper 45K",
+    "puffs": "45,000 puffs",
+    "priceText": "$35",
+    "dealText": "",
+    "cardImage": "./images/promos/flairsni.png",
+    "file": "./data/brands/flair-sniper-45k.json"
+  },
+  {
+    "id": "wave-25k",
+    "name": "Wave 25K",
+    "puffs": "25,000 puffs",
+    "priceText": "$30",
+    "dealText": "",
+    "cardImage": "./images/promos/wave25k.png",
+    "file": "./data/brands/wave-25k.json"
+  },
+  {
+    "id": "wave-45k",
+    "name": "Wave 45K",
+    "puffs": "45,000 puffs",
+    "priceText": "$35",
+    "dealText": "",
+    "cardImage": "./images/promos/wave25k.png",
+    "file": "./data/brands/wave-45k.json"
+  },
+  {
+    "id": "raz-25k",
+    "name": "Raz 25K",
+    "puffs": "25,000 puffs",
+    "priceText": "$30",
+    "dealText": "2 for $50",
+    "cardImage": "./images/promos/raz25k.webp",
+    "file": "./data/brands/raz-25k.json"
   }
 ]
