@@ -79,5 +79,14 @@
     "dealText": "",
     "cardImage": "./images/promos/cali8k.jpg",
     "file": "./data/brands/cali-ul8000.json"
+  },
+  {
+    "id": "raz-50k",
+    "name": "Raz 50K",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": "",
+    "cardImage": "./images/promos/raz50k.webp",
+    "file": "./data/brands/raz-50k.json"
   }
 ]
