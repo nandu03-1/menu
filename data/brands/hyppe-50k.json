@@ -1,0 +1,80 @@
+{
+  "brand": {
+    "name": "Hyppe 50K",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Blue Razz Ice",
+      "price": 35,
+      "image": "images/hyppe-50k/blue-razz-ice.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Clear",
+      "price": 35,
+      "image": "images/hyppe-50k/clear.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 35,
+      "image": "images/hyppe-50k/cool-mint.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Grape",
+      "price": 35,
+      "image": "images/hyppe-50k/frozen-grape.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Strawberry",
+      "price": 35,
+      "image": "images/hyppe-50k/frozen-strawberry.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Georgia Peach Ice",
+      "price": 35,
+      "image": "images/hyppe-50k/georgia-peach-ice.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Miami Mint",
+      "price": 35,
+      "image": "images/hyppe-50k/miami-mint.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Mexican Mango",
+      "price": 35,
+      "image": "images/hyppe-50k/mexican-mango.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    },
+    {
+      "flavor": "Strawberry Banana",
+      "price": 35,
+      "image": "images/hyppe-50k/strawberry-banana.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Ice",
+      "price": 35,
+      "image": "images/hyppe-50k/watermelon-ice.png",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
