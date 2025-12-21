@@ -14,26 +14,30 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
       <h2 id="ageTitle">21+ Only</h2>
       <p>You must be 21 or older to view this menu.</p>
+
       <div class="modal-actions">
         <button id="ageYes" class="btn primary">I’m 21+</button>
         <button id="ageNo" class="btn">No</button>
       </div>
+
       <p class="fineprint">
         Prices subject to change. Availability may vary. Menu is informational only — no online sales.
       </p>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
       <div class="brand">
         <div class="logo">
-  <img
-    src="./images/logo/stardust-logo.jpg"
-    alt="Stardust Smoke Shop Logo"
-    class="logo-img"
-  />
-</div>
+          <!-- Put your logo file here -->
+          <img
+            src="./images/logo/stardust-logo.jpg"
+            alt="Stardust Smoke Shop Logo"
+            class="logo-img"
+          />
+        </div>
 
         <div class="brand-text">
           <h1 id="shopName">Stardust Smoke Shop</h1>
@@ -49,82 +53,90 @@
   </header>
 
   <main class="container">
+    <!-- Controls -->
     <section class="controls">
       <label class="sr-only" for="brandSelect">Select brand</label>
       <select id="brandSelect" aria-label="Select brand">
-        <option value="all">All brands</option>
+        <option value="home">Home</option>
       </select>
 
       <label class="sr-only" for="searchInput">Search flavors</label>
-      <input id="searchInput" type="search" placeholder="Search flavors (ex: mango, mint, blueberry…)" />
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search flavors (ex: mango, mint, blueberry…)"
+      />
 
-      <label class="sr-only" for="sortSelect">Sort</label>
-      <select id="sortSelect" aria-label="Sort">
-        <option value="featured">Sort: Featured</option>
-        <option value="nameAsc">Flavor: A → Z</option>
-        <option value="nameDesc">Flavor: Z → A</option>
-        <option value="priceAsc">Price: Low → High</option>
-        <option value="priceDesc">Price: High → Low</option>
-      </select>
+      <!-- Spacer (keeps grid alignment similar to old layout; harmless) -->
+      <div class="controls-spacer" aria-hidden="true"></div>
     </section>
 
+    <!-- Summary -->
     <section class="summary">
-  <div class="summary-card">
-    <div class="summary-title">Showing</div>
-    <div class="summary-value" id="resultsCount">0 items</div>
-  </div>
-</section>
+      <div class="summary-card">
+        <div class="summary-title">Showing</div>
+        <div class="summary-value" id="resultsCount">Select a brand</div>
+      </div>
+    </section>
 
-    <section id="homePromos" class="promo-grid"></section>
+    <!-- Home brand cards -->
+    <section id="homePromos" class="promo-grid" aria-live="polite"></section>
 
-<section id="brandPanel" class="brand-panel hidden">
-  <div class="brand-header">
-    <div class="brand-title" id="brandTitle"></div>
-    <div class="brand-sub">
-      <span id="brandPuffs"></span>
-      <span class="dot">•</span>
-      <span id="brandPrice"></span>
-    </div>
-  </div>
-  <div id="flavorList" class="flavor-list"></div>
-</section>
+    <!-- Brand panel (list only) -->
+    <section id="brandPanel" class="brand-panel hidden">
+      <div class="brand-header">
+        <div class="brand-title" id="brandTitle">Brand</div>
+        <div class="brand-sub">
+          <span id="brandPuffs">—</span>
+          <span class="dot">•</span>
+          <span id="brandPrice">—</span>
+        </div>
+      </div>
 
+      <div id="flavorList" class="flavor-list" aria-live="polite"></div>
+    </section>
 
-
+    <!-- Footer -->
     <section class="footer-card">
-      <h2>Stardust Smoke Shop</h2>
+      <h2>Store Info</h2>
+
       <div class="info">
-  <div>
-    <div class="label">Hours</div>
-    <div class="summary-value" id="hoursText">Mon–Sun: 8 AM – 12 AM</div>
-  </div>
+        <div>
+          <div class="label">Hours</div>
+          <div class="summary-value" id="hoursText">Mon–Sun: 8 AM – 12 AM</div>
+        </div>
 
-  <div>
-    <div class="label">Address</div>
-    <div class="summary-value" id="addressText">626 US-206 Unit-4, Hillsborough Township, NJ 08844</div>
-  </div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="summary-value" id="phoneText">(908) 829-5361</div>
+        </div>
 
-  <div>
-    <div class="label">Phone</div>
-    <div><a class="link" href="tel:+19088295361" id="phoneText">(908) 829-5361</a></div>
-  </div>
+        <div>
+          <div class="label">Address</div>
+          <div class="summary-value" id="addressText">626 US-206 Unit-4, Hillsborough Township, NJ 08844</div>
+        </div>
 
-  <div>
-    <div class="label">Directions</div>
-    <div><a class="link" target="_blank" rel="noreferrer" id="mapsText" href="#">Open in Google Maps</a></div>
-  </div>
-</div>
+        <div>
+          <div class="label">Map</div>
+          <a id="mapsText" class="link" target="_blank" rel="noreferrer" href="#">
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
 
       <p class="fineprint">
-        Prices subject to change. Availability may vary. 21+ only.
+        Prices may change without notice. Images are for reference only.
       </p>
     </section>
   </main>
 
-   <div id="imgModal" class="img-modal" aria-hidden="true">
-    <button id="imgModalClose" class="img-modal-close" aria-label="Close image">✕</button>
-    <img id="imgModalImage" class="img-modal-image" alt="" />
-    <div id="imgModalCaption" class="img-modal-caption"></div>
+  <!-- Fullscreen Image Modal -->
+  <div id="imgModal" class="img-modal" aria-hidden="true">
+    <button id="imgModalClose" class="img-modal-close" type="button">Close</button>
+    <div class="img-modal-inner">
+      <img id="imgModalImage" class="img-modal-image" alt="Product image" />
+      <div id="imgModalCaption" class="img-modal-caption"></div>
+    </div>
   </div>
 
   <script src="./app.js"></script>
