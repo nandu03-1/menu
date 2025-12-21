@@ -1,7 +1,10 @@
-"brandId": "geekbar-pulse-15k",
-  "name": "Geek Bar Pulse 15K",
-  "puffs": "15,000 puffs",
-  "price": "$25",
+{
+  "brand": {
+    "name": "Geek Bar Pulse 15K",
+    "puffs": "15,000 puffs",
+    "priceText": "$25",
+    "dealText": "2 for $40"
+  },
   "flavors":[
   {
     "id": 1,
@@ -298,3 +301,4 @@
     "image": "images/geekbar-pulse-15k/california-cherry.png"
   }
 ]
+)
