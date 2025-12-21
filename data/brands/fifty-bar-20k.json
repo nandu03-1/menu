@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "Fifty Bar 20K",
+    "puffs": "20,000 puffs",
+    "priceText": "$25",
+    "dealText": ""
+  },
+  "flavors": [
+    { "flavor": "Baja Burst", "price": 25, "image": "images/fifty-bar-20k/baja-burst.png", "tags": [], "soldOut": false },
+    { "flavor": "Baja Slushie", "price": 25, "image": "images/fifty-bar-20k/baja-slushie.png", "tags": [], "soldOut": false },
+    { "flavor": "Berry Pop", "price": 25, "image": "images/fifty-bar-20k/berry-pop.png", "tags": [], "soldOut": false },
+    { "flavor": "Bonker Berries", "price": 25, "image": "images/fifty-bar-20k/bonker-berries.png", "tags": [], "soldOut": false },
+    { "flavor": "Chocolate Creme", "price": 25, "image": "images/fifty-bar-20k/chocolate-creme.png", "tags": [], "soldOut": false },
+    { "flavor": "Cinnamon Funnel Cake", "price": 25, "image": "images/fifty-bar-20k/cinnamon-funnel-cake.png", "tags": [], "soldOut": false },
+    { "flavor": "Cookie Butter", "price": 25, "image": "images/fifty-bar-20k/cookie-butter.png", "tags": [], "soldOut": false },
+    { "flavor": "Gummy Whip", "price": 25, "image": "images/fifty-bar-20k/gummy-whip.png", "tags": [], "soldOut": false },
+    { "flavor": "Hawaiian Nectar", "price": 25, "image": "images/fifty-bar-20k/hawaiian-nectar.png", "tags": [], "soldOut": false },
+    { "flavor": "Island Punch", "price": 25, "image": "images/fifty-bar-20k/island-punch.png", "tags": [], "soldOut": false },
+    { "flavor": "Lava Blast", "price": 25, "image": "images/fifty-bar-20k/lava-blast.png", "tags": [], "soldOut": false },
+    { "flavor": "Peach Cobbler", "price": 25, "image": "images/fifty-bar-20k/peach-cobbler.png", "tags": [], "soldOut": false },
+    { "flavor": "Polar Ice", "price": 25, "image": "images/fifty-bar-20k/polar-ice.png", "tags": [], "soldOut": false },
+    { "flavor": "Rainbow Road", "price": 25, "image": "images/fifty-bar-20k/rainbow-road.png", "tags": [], "soldOut": false },
+    { "flavor": "Raspberry Jam", "price": 25, "image": "images/fifty-bar-20k/raspberry-jam.png", "tags": [], "soldOut": false },
+    { "flavor": "Sour Punch", "price": 25, "image": "images/fifty-bar-20k/sour-punch.png", "tags": [], "soldOut": false },
+    { "flavor": "Sour Rainbow", "price": 25, "image": "images/fifty-bar-20k/sour-rainbow.png", "tags": [], "soldOut": false },
+    { "flavor": "Southern Tobacco", "price": 25, "image": "images/fifty-bar-20k/southern-tobacco.png", "tags": [], "soldOut": false },
+    { "flavor": "Spearmint", "price": 25, "image": "images/fifty-bar-20k/spearmint.png", "tags": [], "soldOut": false },
+    { "flavor": "Vanilla Bean Tobacco", "price": 25, "image": "images/fifty-bar-20k/vanilla-bean-tobacco.png", "tags": [], "soldOut": false },
+
+    { "flavor": "Blueberry Cereal Donut Milk", "price": 25, "image": "images/fifty-bar-20k/blueberry-cereal-donut-milk.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Blueberry Pound Cake", "price": 25, "image": "images/fifty-bar-20k/blueberry-pound-cake.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Butter Bean", "price": 25, "image": "images/fifty-bar-20k/butter-bean.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Gold Tobacco", "price": 25, "image": "images/fifty-bar-20k/gold-tobacco.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Green Apple Blast", "price": 25, "image": "images/fifty-bar-20k/green-apple-blast.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Kiberry Chew", "price": 25, "image": "images/fifty-bar-20k/kiberry-chew.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Lemon Cake Dough", "price": 25, "image": "images/fifty-bar-20k/lemon-cake-dough.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Mint", "price": 25, "image": "images/fifty-bar-20k/mint.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "OMG Smoothie", "price": 25, "image": "images/fifty-bar-20k/omg-smoothie.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Pink Sour Straws", "price": 25, "image": "images/fifty-bar-20k/pink-sour-straws.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Strawberry Cereal Donut Milk", "price": 25, "image": "images/fifty-bar-20k/strawberry-cereal-donut-milk.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Strawmelon Punch", "price": 25, "image": "images/fifty-bar-20k/strawmelon-punch.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Watermelon Patch", "price": 25, "image": "images/fifty-bar-20k/watermelon-patch.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Wazza Limon", "price": 25, "image": "images/fifty-bar-20k/wazza-limon.png", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Yeti Mint", "price": 25, "image": "images/fifty-bar-20k/yeti-mint.png", "tags": ["soldout"], "soldOut": true }
+  ]
+}
