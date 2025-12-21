@@ -1,6 +1,8 @@
 // =========================
 // Stardust Smoke Shop Menu
-// Home Promos + Hybrid Grid/List UX + Back gesture routing
+// Home = Brand Cards
+// Brand page = List (thumb on left) + Fullscreen modal
+// Separate file per brand (data/brands.json + data/brands/*.json)
 // =========================
 
 const SHOP = {
@@ -13,88 +15,12 @@ const SHOP = {
     "https://www.google.com/maps/place/Stardust+Smoke+Shop+%26+convenience+store+(premium+cigar+shop)/@40.5001418,-74.6500179,17z"
 };
 
-/* 🔥 Home promo cards (edit these anytime) */
-const HOME_PROMOS = [
-  {
-    title: "Geek Bar 15K",
-    sub: "$25",
-    price: "2 for $40",
-    image: "./images/promos/geek15k.jpg",
-    brand: "Geek Bar Pulse 15K"
-  },
-  {
-    title: "GeekBar Pulse X 25k",
-    sub: "$30",
-    price: "2 for $50",
-    image: "./images/promos/geek25k.jpg",
-    brand: "Geek Bar Pulse X 25K"
-  },
-  {
-    title: "Lava Plus",
-    sub: "$10",
-    price: "",
-    image: "./images/promos/lavaplus.webp",
-    brand: "Lava Plus"
-  },
-   {
-    title: "Flair Sniper 45K",
-    sub: "$35",
-    price: "",
-    image: "./images/promos/flairsni.png",
-    brand: "Flair Sniper 45K"
-  },
-   {
-    title: "Cali Ul20000",
-    sub: "$25",
-    price: "",
-    image: "./images/promos/cali20k.jpg",
-    brand: "Cali Ul20000"
-  },
-  {
-    title: "Cali Ul8000",
-    sub: "$18",
-    price: "",
-    image: "./images/promos/cali8k.jpg",
-    brand: "Cali Ul8000"
-  },
-   {
-    title: "Raz 25K",
-    sub: "$30",
-    price: "2 for $50",
-    image: "./images/promos/raz25k.webp",
-    brand: "Raz 25K"
-  },
-   {
-    title: "Wave 25K",
-    sub: "$30",
-    price: "",
-    image: "./images/promos/wave25k.png",
-    brand: "Wave 25K"
-  },
-   {
-    title: "Lava Big Boy",
-    sub: "$18",
-    price: "",
-    image: "./images/promos/lavabig.jpg",
-    brand: "Lava Big Boy"
-  }
-];
-
-/* 🧠 Brands that use LIST view */
-const BRAND_META = {
-  "Geek Bar Pulse 15K": { view: "list", puffs: "15,000 puffs", price: 25 },
-  // "Geek Bar Pulse X 25K": { view: "list", puffs: "25,000 puffs", price: 35 },
-  "Lava Plus": { view: "list", puffs: "2600 puffs", price: 10 }
-};
-
 const el = (id) => document.getElementById(id);
 
 function money(n) {
   if (typeof n !== "number" || Number.isNaN(n)) return "—";
   return n.toLocaleString(undefined, { style: "currency", currency: "USD" });
 }
-
-let FLAVORS = [];
 
 /* ---------- History helpers (Back gesture behavior) ---------- */
 function currentAppState() {
@@ -104,149 +30,156 @@ function pushAppState(state) {
   history.pushState(state, "", "");
 }
 
-/* ---------- Load menu ---------- */
-async function loadMenu() {
-  const res = await fetch("./data/menu.json", { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load menu.json");
+/* ---------- Global data ---------- */
+let BRANDS = [];        // from data/brands.json
+let ACTIVE_BRAND = null; // currently loaded brand file
+
+/* ---------- Loaders ---------- */
+async function loadBrandsIndex() {
+  const res = await fetch("./data/brands.json", { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load data/brands.json");
   const data = await res.json();
-  if (!Array.isArray(data)) throw new Error("menu.json must be an array []");
-  FLAVORS = data;
+  if (!Array.isArray(data)) throw new Error("brands.json must be an array []");
+  BRANDS = data;
+}
+
+async function loadBrandFile(brandId) {
+  const b = BRANDS.find((x) => x.id === brandId);
+  if (!b) throw new Error(`Brand not found: ${brandId}`);
+
+  const res = await fetch(b.file, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to load brand file: ${b.file}`);
+
+  const data = await res.json();
+  if (!data || !Array.isArray(data.flavors)) {
+    throw new Error(`Invalid brand file format: ${b.file}`);
+  }
+
+  // normalize
+  ACTIVE_BRAND = {
+    id: b.id,
+    card: b,
+    meta: data.brand || { name: b.name, puffs: b.puffs, priceText: b.priceText, dealText: b.dealText },
+    flavors: data.flavors || []
+  };
 }
 
 /* ---------- Dropdown ---------- */
-function uniqueBrands(items) {
-  const set = new Set(items.map((p) => p.brand).filter(Boolean));
-  return ["home", "all", ...Array.from(set).sort()];
+function renderBrandDropdown() {
+  const select = el("brandSelect");
+  if (!select) return;
+
+  const opts = [
+    `<option value="home">Home</option>`,
+    ...BRANDS.map((b) => `<option value="${b.id}">${b.name}</option>`)
+  ];
+
+  select.innerHTML = opts.join("");
 }
 
-function renderBrandDropdown(brands) {
-  el("brandSelect").innerHTML = brands
-    .map((b) =>
-      b === "home"
-        ? `<option value="home">Home</option>`
-        : `<option value="${b}">${b === "all" ? "All brands" : b}</option>`
-    )
-    .join("");
-}
-
-/* ---------- Home Promos ---------- */
-function renderHomePromos() {
+/* ---------- Home Brand Cards ---------- */
+function renderHomeCards() {
   const wrap = el("homePromos");
   if (!wrap) return;
 
-  wrap.innerHTML = HOME_PROMOS.map(
-    (p) => `
-    <article class="promo-card" data-brand="${p.brand}">
-      <div class="promo-img-wrap">
-        <img class="promo-img" src="${p.image}" alt="${p.title}" loading="lazy"
-             onerror="this.style.display='none'"/>
-      </div>
-      <div class="promo-title">${p.title}</div>
-      <p class="promo-sub">${p.sub}</p>
-      ${p.price ? `<div class="promo-price">${p.price}</div>` : ""}
-    </article>
-  `
-  ).join("");
+  wrap.innerHTML = BRANDS.map((b) => {
+    const deal = (b.dealText || "").trim();
+    const price = (b.priceText || "").trim();
+    return `
+      <article class="promo-card" data-brandid="${b.id}">
+        <div class="promo-img-wrap">
+          <img class="promo-img" src="${b.cardImage}" alt="${b.name}" loading="lazy"
+               onerror="this.style.display='none'"/>
+        </div>
+        <div class="promo-title">${b.name}</div>
+        <p class="promo-sub">${b.puffs || ""}</p>
+        <div class="promo-price">
+          ${deal ? `<span class="promo-deal">${deal}</span>` : ""}
+          ${price ? `<span class="promo-base">${price}</span>` : ""}
+        </div>
+      </article>
+    `;
+  }).join("");
 
   wrap.querySelectorAll(".promo-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const targetBrand = card.dataset.brand || "all";
-      el("brandSelect").value = targetBrand;
+    card.addEventListener("click", async () => {
+      const brandId = card.dataset.brandid;
 
-      // push brand state so Back goes to Home
-      pushAppState({ view: "brand", brand: targetBrand });
+      el("brandSelect").value = brandId;
+      pushAppState({ view: "brand", brandId });
 
-      routeView(true); // true = don't push again (we just pushed)
+      await showBrand(brandId, true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 }
 
 function showHome(push = true) {
-  const home = el("homePromos");
-  if (home) home.style.display = "";
-  el("productGrid").style.display = "none";
+  el("homePromos").style.display = "";
   el("brandPanel")?.classList.add("hidden");
-  el("resultsCount").textContent = "Choose a category";
+
+  // we are not using grid anymore; keep it hidden
+  const grid = el("productGrid");
+  if (grid) grid.style.display = "none";
+
+  el("resultsCount").textContent = "Select a brand";
 
   if (push) pushAppState({ view: "home" });
 }
 
-/* ---------- Grid View ---------- */
-function applyFilters(items) {
-  const q = (el("searchInput")?.value || "").trim().toLowerCase();
-  const brand = el("brandSelect").value;
+/* ---------- Brand header + list ---------- */
+function setBrandHeader() {
+  const meta = ACTIVE_BRAND?.meta || {};
+  const card = ACTIVE_BRAND?.card || {};
 
-  let out = items;
+  el("brandTitle").textContent = meta.name || card.name || "Brand";
+  el("brandPuffs").textContent = meta.puffs || card.puffs || "—";
 
-  if (brand !== "all" && brand !== "home") out = out.filter((p) => p.brand === brand);
-  if (q) out = out.filter((p) => (p.flavor || "").toLowerCase().includes(q));
+  // show deal if present, else price
+  const deal = (meta.dealText || card.dealText || "").trim();
+  const priceText = (meta.priceText || card.priceText || "").trim();
 
-  // Optional: keep your sort dropdown working if you want later.
-  // (Right now, your sortSelect changes still trigger routeView; this is fine.)
-
-  return out;
+  el("brandPrice").textContent = deal ? `${deal} • ${priceText || ""}`.trim() : (priceText || "—");
 }
 
-function renderGrid(items) {
-  const grid = el("productGrid");
+function sortFlavorsForUX(items) {
+  // Priority: NOT sold out first, then tags (new/trending), then A-Z
+  const tagScore = (f) => {
+    const tags = Array.isArray(f.tags) ? f.tags.map(String) : [];
+    const hasNew = tags.includes("new");
+    const hasTrending = tags.includes("trending");
+    if (hasNew && hasTrending) return 0;
+    if (hasNew) return 1;
+    if (hasTrending) return 2;
+    return 3;
+  };
 
-  if (!items.length) {
-    grid.innerHTML = `
-      <div class="card">
-        <h3>No matches</h3>
-        <p class="desc">Try a different brand or search term.</p>
-      </div>
-    `;
-    return;
-  }
+  return items.slice().sort((a, b) => {
+    const aSold = !!a.soldOut;
+    const bSold = !!b.soldOut;
+    if (aSold !== bSold) return aSold ? 1 : -1;
 
-  grid.innerHTML = items
-    .map((p) => {
-      const src = p.image || "./images/placeholder.png";
-      const caption = `${p.brand || ""} — ${p.flavor || ""}`;
-      return `
-        <article class="card">
-          <div class="product-img-wrap">
-            <img class="product-img"
-              src="${src}"
-              alt="${p.flavor || ""}"
-              data-full="${src}"
-              data-caption="${caption.replaceAll('"', "&quot;")}"
-              loading="lazy"
-              onerror="this.src='./images/placeholder.png'; this.onerror=null;" />
-          </div>
-          <h3>${p.flavor || ""}</h3>
-          <div class="meta"><span class="badge">${p.brand || ""}</span></div>
-          <div class="price">${typeof p.price === "number" ? money(p.price) : (p.price || "—")}</div>
-        </article>
-      `;
-    })
-    .join("");
+    const aTag = tagScore(a);
+    const bTag = tagScore(b);
+    if (aTag !== bTag) return aTag - bTag;
+
+    return (a.flavor || "").localeCompare(b.flavor || "");
+  });
 }
 
-/* ---------- List View ---------- */
-function setBrandHeader(name) {
-  const meta = BRAND_META[name] || {};
-  el("brandTitle").textContent = name || "Brand";
-  el("brandPuffs").textContent = meta.puffs || "—";
-
-  if (typeof meta.price === "number") el("brandPrice").textContent = money(meta.price);
-  else if (meta.price) el("brandPrice").textContent = meta.price;
-  else el("brandPrice").textContent = "—";
-}
-
-function renderFlavorList(brand) {
+function renderFlavorList() {
   const list = el("flavorList");
   const q = (el("searchInput")?.value || "").trim().toLowerCase();
 
-  let items = FLAVORS.filter((p) => p.brand === brand);
-  if (q) items = items.filter((p) => (p.flavor || "").toLowerCase().includes(q));
+  let items = (ACTIVE_BRAND?.flavors || []).slice();
 
-  // nice list sort
-  items = items.slice().sort((a, b) => (a.flavor || "").localeCompare(b.flavor || ""));
+  if (q) {
+    items = items.filter((p) => (p.flavor || "").toLowerCase().includes(q));
+  }
 
-  el("resultsCount").textContent = `${items.length} items`;
+  items = sortFlavorsForUX(items);
+
+  el("resultsCount").textContent = `${items.length} flavor${items.length === 1 ? "" : "s"}`;
 
   if (!items.length) {
     list.innerHTML = `
@@ -258,128 +191,111 @@ function renderFlavorList(brand) {
     return;
   }
 
-  list.innerHTML = items
-    .map((p) => {
-      const src = p.image || "./images/placeholder.png";
-      const caption = `${p.brand || ""} — ${p.flavor || ""}`;
-      return `
-        <div class="flavor-item"
-          data-src="${src}"
-          data-caption="${caption.replaceAll('"', "&quot;")}">
-          <div class="flavor-name">${p.flavor || ""}</div>
-          <div class="flavor-hint">Tap to view</div>
-        </div>
-      `;
-    })
-    .join("");
+  list.innerHTML = items.map((p) => {
+    const img = p.image || "./images/placeholder.png";
+    const tags = Array.isArray(p.tags) ? p.tags : [];
+    const soldOut = !!p.soldOut;
 
-  list.querySelectorAll(".flavor-item").forEach((row) => {
-    row.addEventListener("click", () => {
-      openImageModal(row.dataset.src, row.dataset.caption);
-    });
+    const tagHtml = [
+      ...tags.map((t) => `<span class="flavor-tag">${String(t).toUpperCase()}</span>`),
+      soldOut ? `<span class="flavor-tag soldout">SOLD OUT</span>` : ""
+    ].join("");
+
+    return `
+      <div class="flavor-row" data-src="${img}" data-caption="${(ACTIVE_BRAND.meta.name || "")} — ${(p.flavor || "")}">
+        <div class="flavor-thumb">
+          <img src="${img}" alt="${p.flavor || ""}" loading="lazy"
+               onerror="this.src='./images/placeholder.png'; this.onerror=null;" />
+        </div>
+
+        <div class="flavor-main">
+          <div class="flavor-top">
+            <div class="flavor-name">${p.flavor || ""}</div>
+            <div class="flavor-price">${typeof p.price === "number" ? money(p.price) : (p.price || "")}</div>
+          </div>
+          <div class="flavor-bottom">
+            <div class="flavor-tags">${tagHtml}</div>
+            <div class="flavor-hint">Tap to view image</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  list.querySelectorAll(".flavor-row").forEach((row) => {
+    row.addEventListener("click", () => openImageModal(row.dataset.src, row.dataset.caption));
   });
 }
 
 /* ---------- Image Modal (with Back behavior) ---------- */
 function openImageModal(src, caption) {
-  const modal = el("imgModal");
   el("imgModalImage").src = src || "./images/placeholder.png";
   el("imgModalCaption").textContent = caption || "";
-  modal.classList.add("show");
+  el("imgModal").classList.add("show");
 
-  // push modal state so Back closes it first
-  const brand = el("brandSelect")?.value || "all";
-  pushAppState({ view: "modal", brand, src, caption });
+  const brandId = el("brandSelect").value || "home";
+  pushAppState({ view: "modal", brandId, src, caption });
 }
 
 function closeImageModalSmart() {
   const state = currentAppState();
-  // If we're currently in modal state, go back one history step (clean UX)
-  if (state.view === "modal") {
-    history.back();
-  } else {
-    el("imgModal").classList.remove("show");
-  }
+  if (state.view === "modal") history.back();
+  else el("imgModal").classList.remove("show");
 }
 
 function setupImageModal() {
-  // close button
   el("imgModalClose").onclick = closeImageModalSmart;
 
-  // click backdrop
   el("imgModal").onclick = (e) => {
     if (e.target.id === "imgModal") closeImageModalSmart();
   };
 
-  // ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && el("imgModal").classList.contains("show")) {
       closeImageModalSmart();
     }
   });
-
-  // Click product image in GRID (event delegation)
-  document.addEventListener("click", (e) => {
-    const img = e.target.closest(".product-img");
-    if (!img) return;
-
-    const src = img.getAttribute("data-full") || img.getAttribute("src");
-    const cap = img.getAttribute("data-caption") || "";
-    openImageModal(src, cap);
-  });
 }
 
-/* ---------- Router (Home / List / Grid) ---------- */
-function routeView(skipPush = false) {
-  const brand = el("brandSelect").value;
+/* ---------- View switching ---------- */
+async function showBrand(brandId, skipPush = false) {
+  // hide home
+  el("homePromos").style.display = "none";
 
-  // Home
-  if (brand === "home") {
-    showHome(!skipPush);
-    renderHomePromos();
-    return;
-  }
+  // ensure correct history state
+  if (!skipPush) pushAppState({ view: "brand", brandId });
 
-  // leaving Home -> hide promos
-  const home = el("homePromos");
-  if (home) home.style.display = "none";
+  await loadBrandFile(brandId);
 
-  // push brand navigation (unless we already pushed)
-  if (!skipPush) pushAppState({ view: "brand", brand });
+  // show brand list panel
+  el("brandPanel").classList.remove("hidden");
+  const grid = el("productGrid");
+  if (grid) grid.style.display = "none";
 
-  // List mode
-  if (BRAND_META[brand]?.view === "list") {
-    el("productGrid").style.display = "none";
-    el("brandPanel")?.classList.remove("hidden");
-    setBrandHeader(brand);
-    renderFlavorList(brand);
-    return;
-  }
-
-  // Grid mode
-  el("brandPanel")?.classList.add("hidden");
-  el("productGrid").style.display = "";
-  const items = applyFilters(FLAVORS);
-  el("resultsCount").textContent = `${items.length} items`;
-  renderGrid(items);
+  setBrandHeader();
+  renderFlavorList();
 }
 
-/* ---------- Back/Forward handling ---------- */
 function setupBackBehavior() {
-  window.addEventListener("popstate", () => {
+  window.addEventListener("popstate", async () => {
     const state = currentAppState();
 
-    // Always close modal when leaving modal state
+    // Close modal if leaving modal
     if (el("imgModal")?.classList.contains("show") && state.view !== "modal") {
       el("imgModal").classList.remove("show");
     }
 
     if (state.view === "modal") {
-      // Ensure brand view is loaded underneath
-      el("brandSelect").value = state.brand || "all";
-      routeView(true);
+      // load underlying brand
+      el("brandSelect").value = state.brandId || "home";
+      if (state.brandId && state.brandId !== "home") {
+        await showBrand(state.brandId, true);
+      } else {
+        showHome(false);
+        renderHomeCards();
+      }
 
-      // Re-open modal for forward/back
+      // reopen modal
       el("imgModalImage").src = state.src || "./images/placeholder.png";
       el("imgModalCaption").textContent = state.caption || "";
       el("imgModal").classList.add("show");
@@ -387,52 +303,104 @@ function setupBackBehavior() {
     }
 
     if (state.view === "brand") {
-      el("brandSelect").value = state.brand || "all";
-      routeView(true);
+      el("brandSelect").value = state.brandId || "home";
+      await showBrand(state.brandId, true);
       return;
     }
 
-    // default to home
+    // default home
     el("brandSelect").value = "home";
     showHome(false);
-    renderHomePromos();
+    renderHomeCards();
   });
 }
 
-/* ---------- Init ---------- */
-async function init() {
-  setupImageModal();
-  setupBackBehavior();
+/* ---------- Age gate + shop info ---------- */
+function setupAgeGate() {
+  const gate = el("ageGate");
+  const key = "stardust_menu_age_ok";
 
-  // shop footer
+  const show = () => {
+    gate.classList.add("show");
+    gate.setAttribute("aria-hidden", "false");
+  };
+  const hide = () => {
+    gate.classList.remove("show");
+    gate.setAttribute("aria-hidden", "true");
+  };
+
+  if (localStorage.getItem(key) !== "yes") show();
+
+  el("ageYes").addEventListener("click", () => {
+    localStorage.setItem(key, "yes");
+    hide();
+  });
+
+  el("ageNo").addEventListener("click", () => {
+    window.location.href = "https://www.google.com";
+  });
+}
+
+function setupShopInfo() {
   el("shopName").textContent = SHOP.name;
+  el("callBtn").href = `tel:${SHOP.phone}`;
+  el("mapBtn").href = SHOP.mapsLink;
+
   el("hoursText").textContent = SHOP.hours;
   el("addressText").textContent = SHOP.address;
   el("phoneText").textContent = SHOP.phoneDisplay;
   el("mapsText").href = SHOP.mapsLink;
+}
 
-  await loadMenu();
-  renderBrandDropdown(uniqueBrands(FLAVORS));
+/* ---------- Init ---------- */
+async function init() {
+  setupShopInfo();
+  setupAgeGate();
+  setupImageModal();
+  setupBackBehavior();
 
-  // Start on Home and set initial history state
+  await loadBrandsIndex();
+  renderBrandDropdown();
+
+  // events
+  el("brandSelect").onchange = async () => {
+    const val = el("brandSelect").value;
+
+    // clear search on navigation
+    el("searchInput").value = "";
+
+    if (val === "home") {
+      showHome(true);
+      renderHomeCards();
+      return;
+    }
+
+    await showBrand(val, false);
+  };
+
+  el("searchInput").oninput = () => {
+    // just re-render list for current brand
+    if (el("brandSelect").value !== "home") renderFlavorList();
+  };
+
+  // start Home
   el("brandSelect").value = "home";
   history.replaceState({ view: "home" }, "", "");
-
-  el("brandSelect").onchange = () => routeView(false);
-  el("searchInput").oninput = () => routeView(false);
-  el("sortSelect").onchange = () => routeView(false);
-
-  routeView(true); // true = don't push (already replaceState)
+  showHome(false);
+  renderHomeCards();
 }
 
 init().catch((err) => {
   console.error(err);
   const grid = el("productGrid");
   if (grid) {
+    grid.style.display = "";
     grid.innerHTML = `
       <div class="card">
         <h3>Menu failed to load</h3>
-        <p class="desc">Check <b>data/menu.json</b> path and JSON format.</p>
+        <p class="desc">
+          Check <b>data/brands.json</b> and brand file paths in GitHub Pages.
+        </p>
       </div>
     `;
   }
