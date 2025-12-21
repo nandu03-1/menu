@@ -2,7 +2,7 @@
   "brand": {
     "name": "Geek Bar Pulse X 25K",
     "puffs": "25,000 puffs",
-    "priceText": "$35",
+    "priceText": "$30",
     "dealText": "2 for $50"
   },
   "flavors": [
@@ -66,7 +66,7 @@
       "flavor": "Pink Berry Lemonade",
       "price": 35,
       "image": "images/geekbar-pulse-x-25k/pink-berry-lemonade.png",
-      "tags": [],
+      "tags": [New],
       "soldOut": false
     },
     {
@@ -185,7 +185,7 @@
       "flavor": "Dualicious",
       "price": 35,
       "image": "images/geekbar-pulse-x-25k/dualicious.png",
-      "tags": [],
+      "tags": [New],
       "soldOut": false
     },
     {
@@ -213,7 +213,7 @@
       "flavor": "Pear Of Thieves",
       "price": 35,
       "image": "images/geekbar-pulse-x-25k/pear-of-thieves.png",
-      "tags": [],
+      "tags": [New],
       "soldOut": false
     },
     {
