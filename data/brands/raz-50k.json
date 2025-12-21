@@ -1,0 +1,45 @@
+{
+  "brand": {
+    "name": "Raz 50K",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Code Blue",
+      "price": 35,
+      "image": "images/raz-50k/code-blue.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Code Green",
+      "price": 35,
+      "image": "images/raz-50k/code-green.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Code Pink",
+      "price": 35,
+      "image": "images/raz-50k/code-pink.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Code Red",
+      "price": 35,
+      "image": "images/raz-50k/code-red.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Code White",
+      "price": 35,
+      "image": "images/raz-50k/code-white.png",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
