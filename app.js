@@ -143,29 +143,31 @@ function setBrandHeader() {
 }
 
 function sortFlavorsForUX(items) {
-  // Priority: NOT sold out first, then tags (new/trending), then A-Z
-  const tagScore = (f) => {
-    const tags = Array.isArray(f.tags) ? f.tags.map(String) : [];
-    const hasNew = tags.includes("new");
-    const hasTrending = tags.includes("trending");
-    if (hasNew && hasTrending) return 0;
-    if (hasNew) return 1;
-    if (hasTrending) return 2;
-    return 3;
+  const score = (f) => {
+    const tags = Array.isArray(f.tags) ? f.tags.map(t => String(t).toLowerCase()) : [];
+
+    // lower = higher priority
+    if (tags.includes("new")) return 0;
+    if (tags.includes("trending")) return 1;
+    return 2;
   };
 
   return items.slice().sort((a, b) => {
+    // sold out always bottom
     const aSold = !!a.soldOut;
     const bSold = !!b.soldOut;
     if (aSold !== bSold) return aSold ? 1 : -1;
 
-    const aTag = tagScore(a);
-    const bTag = tagScore(b);
-    if (aTag !== bTag) return aTag - bTag;
+    // NEW / TRENDING priority
+    const aScore = score(a);
+    const bScore = score(b);
+    if (aScore !== bScore) return aScore - bScore;
 
+    // alphabet
     return (a.flavor || "").localeCompare(b.flavor || "");
   });
 }
+
 
 function renderFlavorList() {
   const list = el("flavorList");
