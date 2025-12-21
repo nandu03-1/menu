@@ -12,7 +12,7 @@
     "id": "geek-bar-pulse-x-25k",
     "name": "Geek Bar Pulse X 25K",
     "puffs": "25,000 puffs",
-    "priceText": "$35",
+    "priceText": "$30",
     "dealText": "2 for $50",
     "cardImage": "./images/promos/geek25k.jpg",
     "file": "./data/brands/geek-bar-pulse-x-25k.json"
