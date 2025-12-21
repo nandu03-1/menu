@@ -199,9 +199,14 @@ function renderFlavorList() {
     const soldOut = !!p.soldOut;
 
     const tagHtml = [
-      ...tags.map((t) => `<span class="flavor-tag">${String(t).toUpperCase()}</span>`),
-      soldOut ? `<span class="flavor-tag soldout">SOLD OUT</span>` : ""
-    ].join("");
+  ...tags.map((t) => {
+    const tt = String(t).toLowerCase();
+    const cls = tt === "new" ? "flavor-tag new" : (tt === "trending" ? "flavor-tag trending" : "flavor-tag");
+    return `<span class="${cls}">${tt.toUpperCase()}</span>`;
+  }),
+  soldOut ? `<span class="flavor-tag soldout">SOLD OUT</span>` : ""
+].join("");
+
 
     return `
       <div class="flavor-row" data-src="${img}" data-caption="${(ACTIVE_BRAND.meta.name || "")} — ${(p.flavor || "")}">
