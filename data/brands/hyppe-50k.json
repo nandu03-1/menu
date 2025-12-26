@@ -39,7 +39,7 @@
       "price": 35,
       "image": "images/hyppe50k/cbf.webp",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Chewy Watermelon",
@@ -81,14 +81,14 @@
       "price": 35,
       "image": "images/hyppe50k/spf.webp",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
       {
       "flavor": "Sour Summer Fab",
       "price": 35,
       "image": "images/hyppe50k/ssf.webp",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
       {
       "flavor": "Sour Watermelon Freeze",
