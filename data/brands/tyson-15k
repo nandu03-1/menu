@@ -1,0 +1,157 @@
+{
+  "brand": {
+    "name": "Tyson Iron Mike 15K",
+    "puffs": "15,000 puffs",
+    "priceText": "$22",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Blueberry Lychee",
+      "price": 22,
+      "image": "images/tyson-15k/blueberry-lychee.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cake",
+      "price": 22,
+      "image": "images/tyson-15k/cake.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "California Cherry",
+      "price": 22,
+      "image": "images/tyson-15k/california-cherry.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    },
+    {
+      "flavor": "Clear",
+      "price": 22,
+      "image": "images/tyson-15k/clear.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 22,
+      "image": "images/tyson-15k/cool-mint.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Banana",
+      "price": 22,
+      "image": "images/tyson-15k/frozen-banana.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Grape",
+      "price": 22,
+      "image": "images/tyson-15k/frozen-grape.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    },
+    {
+      "flavor": "Frozen Mango",
+      "price": 22,
+      "image": "images/tyson-15k/frozen-mango.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Peach",
+      "price": 22,
+      "image": "images/tyson-15k/frozen-peach.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Grape Razz",
+      "price": 22,
+      "image": "images/tyson-15k/grape-razz.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Menthol",
+      "price": 22,
+      "image": "images/tyson-15k/menthol.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Peach Mango",
+      "price": 22,
+      "image": "images/tyson-15k/peach-mango.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Peach Raspberry",
+      "price": 22,
+      "image": "images/tyson-15k/peach-raspberry.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    },
+    {
+      "flavor": "Peach Watermelon",
+      "price": 22,
+      "image": "images/tyson-15k/peach-watermelon.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Pineapple Mango",
+      "price": 22,
+      "image": "images/tyson-15k/pineapple-mango.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Pineapple Sour Berry",
+      "price": 22,
+      "image": "images/tyson-15k/pineapple-sour-berry.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Whip",
+      "price": 22,
+      "image": "images/tyson-15k/strawberry-whip.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Tobacco",
+      "price": 22,
+      "image": "images/tyson-15k/tobacco.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon",
+      "price": 22,
+      "image": "images/tyson-15k/watermelon.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    },
+    {
+      "flavor": "Watermelon Bubble Gum",
+      "price": 22,
+      "image": "images/tyson-15k/watermelon-bubble-gum.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Gummies",
+      "price": 22,
+      "image": "images/tyson-15k/watermelon-gummies.png",
+      "tags": ["soldout"],
+      "soldOut": true
+    }
+  ]
+}
