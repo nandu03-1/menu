@@ -59,8 +59,8 @@
       "flavor": "Dubai Chocolate",
       "price": 35,
       "image": "images/hyppe50k/n.webp",
-      "tags": ["soldout"],
-      "soldOut": true
+      "tags": [],
+      "soldOut": false
     },
     {
       "flavor": "Grape Aloe Freeze",
