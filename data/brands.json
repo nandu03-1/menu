@@ -122,7 +122,7 @@
     "puffs": "50,000 puffs",
     "priceText": "$35",
     "dealText": "",
-    "cardImage": "./images/promos/hyppe.jpeg",
+    "cardImage": "./images/promos/hyppe.webp",
     "file": "./data/brands/hyppe-50k.json"
   },
     {
