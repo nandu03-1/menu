@@ -75,6 +75,13 @@
       "image": "images/hyppe-50k/watermelon-ice.png",
       "tags": [],
       "soldOut": false
+    },
+     {
+      "flavor": "Fizzy Cola",
+      "price": 35,
+      "image": "images/hyppe-50k/watermelon-ice.png",
+      "tags": [],
+      "soldOut": false
     }
   ]
 }
