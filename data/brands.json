@@ -88,5 +88,59 @@
     "dealText": "",
     "cardImage": "./images/promos/raz50k.jpeg",
     "file": "./data/brands/raz-50k.json"
+  },
+  {
+    "id": "crown-bar-8k",
+    "name": "Crown Bar 8k",
+    "puffs": "8,000 puffs",
+    "priceText": "$20",
+    "dealText": "",
+    "cardImage": "./images/promos/crown.jpeg",
+    "file": "./data/brands/crown-bar-8k.json"
+  },
+    {
+    "id": "fifty-bar-20k",
+    "name": "Fifty Bar 20k",
+    "puffs": "25,000 puffs",
+    "priceText": "$25",
+    "dealText": "",
+    "cardImage": "./images/promos/fifty.jpeg",
+    "file": "./data/brands/fifty-bar-20k.json"
+  },
+    {
+    "id": "foyo-maxx-50k",
+    "name": "Foyo Maxx 50k",
+    "puffs": "50,000 puffs",
+    "priceText": "$30",
+    "dealText": "",
+    "cardImage": "./images/promos/foyo.jpeg",
+    "file": "./data/brands/foyo-maxx-50k.json"
+  },
+   {
+    "id": "hyppe-50k",
+    "name": "Hyppe Infinity 50k",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": "",
+    "cardImage": "./images/promos/hyppe.jpeg",
+    "file": "./data/brands/hyppe-50k.json"
+  },
+    {
+    "id": "tyson-30k",
+    "name": "tyson 30k",
+    "puffs": "30,000 puffs",
+    "priceText": "$28",
+    "dealText": "",
+    "cardImage": "./images/promos/tyson30k.jpeg",
+    "file": "./data/brands/tyson-30k.json"
+  },
+  {
+    "id": "tyson-15k",
+    "name": "Iron Mike Tyson 15k",
+    "puffs": "15,000 puffs",
+    "priceText": "$22",
+    "dealText": "",
+    "cardImage": "./images/promos/tyson15k.jpeg",
+    "file": "./data/brands/tyson-15k.json"
   }
 ]
