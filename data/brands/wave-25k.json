@@ -9,238 +9,238 @@
     {
       "flavor": "Alaska Spearmint",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Blue Gummy",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Blueberry Watermelon",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Cherry Bomb",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Cherry Strapple",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Cherry Strazz",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Clear",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Cranberry Crush",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Blackberry",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Frozen Blue Razz",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Georgia Peach Mango",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Green Dragon",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Juicy Peach Ice",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Luscious Redmelon Ice",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Lush Ice",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Mango Colada",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Mango Twister",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Mango Watermelon",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Minty O's",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "New York Minty Ice",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Pineapple Coco Ice",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Pineapple Passionfruit Guava",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Pomegranate Lemon",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Raspberry Lemonade",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Raz Redmelon",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawbwerry Blast",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawberry Kiwi",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawberry Peach",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Super Fresh Menthol",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Tobacco",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Tropical Rainbow Blast",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Wintergreen",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Wild Cherry Slushie",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Sour Fcuking Fab",
       "price": 30,
-      "image": "images/wave-25k/wave25k.webp",
+      "image": "./images/promos/wave25k.png",
       "tags": [],
       "soldOut": false
     }
