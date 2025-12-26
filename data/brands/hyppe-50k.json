@@ -65,7 +65,7 @@
     {
       "flavor": "Grape Aloe Freeze",
       "price": 35,
-      "image": "images/hyppe50k/gpf.webp",
+      "image": "images/hyppe50k/gaf.webp",
       "tags": [],
       "soldOut": false
     },
@@ -79,7 +79,7 @@
       {
       "flavor": "Sour Apple Freeze",
       "price": 35,
-      "image": "images/hyppe50k/saf.webp",
+      "image": "images/hyppe50k/spf.webp",
       "tags": [],
       "soldOut": false
     },
@@ -121,7 +121,7 @@
      {
       "flavor": "Fizzy Cola",
       "price": 35,
-      "image": "images/hyppe50k/fc.png",
+      "image": "images/hyppe50k/fc.webp",
       "tags": [],
       "soldOut": false
     }
