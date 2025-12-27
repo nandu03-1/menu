@@ -45,13 +45,13 @@
     "file": "./data/brands/wave-25k.json"
   },
   {
-    "id": "wave-45k",
-    "name": "Wave 45K",
-    "puffs": "45,000 puffs",
+    "id": "wave-40k",
+    "name": "Wave 40K",
+    "puffs": "40,000 puffs",
     "priceText": "$35",
     "dealText": "",
-    "cardImage": "./images/promos/wave25k.png",
-    "file": "./data/brands/wave-45k.json"
+    "cardImage": "./images/promos/wave40k.jpg",
+    "file": "./data/brands/wave-40k.json"
   },
   {
     "id": "raz-25k",
