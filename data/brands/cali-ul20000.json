@@ -88,7 +88,7 @@
       "price": 25,
       "image": "images/cali20k/fg.jpg",
       "tags": [],
-      "soldOut": flase
+      "soldOut": false
     },
     {
       "flavor": "Frozen Peach",
