@@ -16,14 +16,14 @@
     {
       "flavor": "Frozen Apple Watermelon",
       "price": 18,
-      "image": "images/cali8k/faw.png",
+      "image": "images/cali8k/faw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Grape",
       "price": 18,
-      "image": "images/cali8k/fg.jpg",
+      "image": "images/cali8k/fg.webp",
       "tags": [],
       "soldOut": false
     },
@@ -52,7 +52,7 @@
       "flavor": "Blue Raspberry Lemonade",
       "price": 18,
       "image": "images/cali8k/brl.webp",
-      "tags": ["soldout"],
+      "tags": [],
       "soldOut": true
     },
     {
@@ -80,7 +80,7 @@
       "flavor": "Frozen Watermelon",
       "price": 18,
       "image": "images/cali8k/fw.webp",
-      "tags": ["soldout"],
+      "tags": [],
       "soldOut": true
     },
     {
