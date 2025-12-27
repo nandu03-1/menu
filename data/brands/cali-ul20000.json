@@ -9,231 +9,231 @@
     {
       "flavor": "Baja Blast",
       "price": 25,
-      "image": "images/cali-ul20000/baja-blast.png",
+      "image": "images/cali20k/bajab.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Blue Blast",
       "price": 25,
-      "image": "images/cali-ul20000/blue-blast.png",
-      "tags": ["soldout"],
+      "image": "images/cali20k/bb.jpg",
+      "tags": [],
       "soldOut": true
     },
     {
       "flavor": "Blue Mint",
       "price": 25,
-      "image": "images/cali-ul20000/blue-mint.png",
+      "image": "images/cali20k/bm.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Blue Raspberry Lemonade",
       "price": 25,
-      "image": "images/cali-ul20000/blue-raspberry-lemonade.png",
+      "image": "images/cali20k/brl.jpg",
       "tags": ["soldout"],
       "soldOut": true
     },
     {
       "flavor": "Blueberry Watermelon",
       "price": 25,
-      "image": "images/cali-ul20000/blueberry-watermelon.png",
+      "image": "images/cali20k/bw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Coconut Banana",
       "price": 25,
-      "image": "images/cali-ul20000/coconut-banana.png",
+      "image": "images/cali20k/cb.jpg",
       "tags": ["soldout"],
       "soldOut": true
     },
     {
       "flavor": "Crazy Melon",
       "price": 25,
-      "image": "images/cali-ul20000/crazy-melon.png",
+      "image": "images/cali20k/cm.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Fcuking Fab",
       "price": 25,
-      "image": "images/cali-ul20000/fcuking-fab.png",
+      "image": "images/cali20k/ff.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Apple Watermelon",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-apple-watermelon.png",
+      "image": "images/cali20k/faw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Banana",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-banana.png",
+      "image": "images/cali20k/fb.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Blue Raspberry",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-blue-raspberry.png",
+      "image": "images/cali20k/fblack.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Grape",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-grape.png",
+      "image": "images/cali20k/fg.jpg",
       "tags": ["soldout"],
       "soldOut": true
     },
     {
       "flavor": "Frozen Peach",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-peach.png",
+      "image": "images/cali20k/fp.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Strawberry Raspberry",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-strawberry-raspberry.png",
+      "image": "images/cali20k/fsr.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Watermelon",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-watermelon.png",
+      "image": "images/cali20k/fw.jpg",
       "tags": ["soldout"],
       "soldOut": true
     },
     {
       "flavor": "Frozen White Grape",
       "price": 25,
-      "image": "images/cali-ul20000/frozen-white-grape.png",
+      "image": "images/cali20k/fwg.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Kiwi Dragon Berry",
       "price": 25,
-      "image": "images/cali-ul20000/kiwi-dragon-berry.png",
+      "image": "images/cali20k/kdb.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "L.A. Mint",
       "price": 25,
-      "image": "images/cali-ul20000/l-a-mint.png",
+      "image": "images/cali20k/lam.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Meta Moon",
       "price": 25,
-      "image": "images/cali-ul20000/meta-moon.png",
+      "image": "images/cali20k/metam.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Miami Mint",
       "price": 25,
-      "image": "images/cali-ul20000/miami-mint.png",
+      "image": "images/cali20k/mm.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Mighty Mint",
       "price": 25,
-      "image": "images/cali-ul20000/mighty-mint.png",
+      "image": "images/cali20k/mightymint.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Omg B-Pop",
       "price": 25,
-      "image": "images/cali-ul20000/omg-b-pop.png",
+      "image": "images/cali20k/omg.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Peach Mango Watermelon",
       "price": 25,
-      "image": "images/cali-ul20000/peach-mango-watermelon.png",
+      "image": "images/cali20k/pmw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Pineapple Strawberry Banana",
       "price": 25,
-      "image": "images/cali-ul20000/pineapple-strawberry-banana.png",
+      "image": "images/cali20k/psb.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Polar Ice",
       "price": 25,
-      "image": "images/cali-ul20000/polar-ice.png",
+      "image": "images/cali20k/pi.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Russian Cream",
       "price": 25,
-      "image": "images/cali-ul20000/russian-cream.png",
+      "image": "images/cali20k/pmw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Sour Apple Ice",
       "price": 25,
-      "image": "images/cali-ul20000/sour-apple-ice.png",
+      "image": "images/cali20k/fsa.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Sour Fcuking Fab",
       "price": 25,
-      "image": "images/cali-ul20000/sour-fcuking-fab.png",
+      "image": "images/cali20k/sff.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawberry Banana",
       "price": 25,
-      "image": "images/cali-ul20000/strawberry-banana.png",
+      "image": "images/cali20k/sb.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawberry Watermelon",
       "price": 25,
-      "image": "images/cali-ul20000/strawberry-watermelon.png",
+      "image": "images/cali20k/sw.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Tabacco",
       "price": 25,
-      "image": "images/cali-ul20000/tabacco.png",
+      "image": "images/cali20k/t.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Triple Berry",
       "price": 25,
-      "image": "images/cali-ul20000/triple-berry.png",
+      "image": "images/cali20k/tb.jpg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Tropical Blast",
       "price": 25,
-      "image": "images/cali-ul20000/tropical-blast.png",
+      "image": "images/cali20k/tropb.jpg",
       "tags": [],
       "soldOut": false
     }
