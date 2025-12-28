@@ -9,72 +9,70 @@
     {
       "flavor": "Blue Razz Ice",
       "price": 30,
-      "image": "images/foyo-maxx-50k/blue-razz-ice.png",
+      "image": "images/foyo50k/bri.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Clear",
       "price": 30,
-      "image": "images/foyo-maxx-50k/clear.png",
+      "image": "images/foyo50k/cm.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Cool Mint",
       "price": 30,
-      "image": "images/foyo-maxx-50k/cool-mint.png",
+      "image": "images/foyo50k/cm.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Frozen Pina Colada",
       "price": 30,
-      "image": "images/foyo-maxx-50k/frozen-pina-colada.png",
+      "image": "images/foyo50k/fpc.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Georgia Peach Ice",
       "price": 30,
-      "image": "images/foyo-maxx-50k/georgia-peach-ice.png",
+      "image": "images/foyo50k/gpi.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Mexican Mango",
       "price": 30,
-      "image": "images/foyo-maxx-50k/mexican-mango.png",
-      "tags": [
-        "soldout"
-      ],
+      "image": "images/foyo50k/sm.jpeg",
+      "tags": [],
       "soldOut": true
     },
     {
       "flavor": "Miami Mint",
       "price": 30,
-      "image": "images/foyo-maxx-50k/miami-mint.png",
+      "image": "images/foyo50k/mm.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Strawberry Mango",
       "price": 30,
-      "image": "images/foyo-maxx-50k/strawberry-mango.png",
+      "image": "images/foyo50k/sm.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Tobacco",
       "price": 30,
-      "image": "images/foyo-maxx-50k/tobacco.png",
+      "image": "images/foyo50k/t.jpeg",
       "tags": [],
       "soldOut": false
     },
     {
       "flavor": "Watermelon Ice",
       "price": 30,
-      "image": "images/foyo-maxx-50k/watermelon-ice.png",
+      "image": "images/foyo50k/wi.jpeg",
       "tags": [],
       "soldOut": false
     }
