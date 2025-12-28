@@ -2,13 +2,94 @@
   "brand": {
     "name": "Tyson 30K",
     "puffs": "30,000 puffs",
-    "priceText": "$30",
+    "priceText": "$28",
     "dealText": ""
   },
   "flavors": [
     {
+      "flavor": "Frozen Mango",
+      "price": 28,
+      "image": "images/tyson30k/fm.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 28,
+      "image": "images/tyson30k/cm.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Frozen Grape",
+      "price": 28,
+      "image": "images/tyson30k/fg.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Clear",
+      "price": 28,
+      "image": "images/tyson30k/c.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Strawberry Banana",
+      "price": 28,
+      "image": "images/tyson30k/sb.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Frozen Peach",
+      "price": 28,
+      "image": "images/tyson30k/fp.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Frozen Banana",
+      "price": 28,
+      "image": "images/tyson30k/fb.jpg",
+      "tags": [],
+      "soldOut": true
+    },
 
+    {
+      "flavor": "Tobacco",
+      "price": 28,
+      "image": "images/tyson30k/t.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon",
+      "price": 28,
+      "image": "images/tyson30k/w.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Strawberry",
+      "price": 28,
+      "image": "images/tyson30k/fs.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Blueberry",
+      "price": 28,
+      "image": "images/tyson30k/fblue.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blue Razz",
+      "price": 28,
+      "image": "images/tyson30k/br.jpg",
+      "tags": [],
+      "soldOut": false
     }
-
   ]
 }
