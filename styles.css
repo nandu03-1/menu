@@ -107,24 +107,6 @@ input::placeholder { color: rgba(166,173,187,.75); }
 #brandSelect { font-size: 16px; padding: 15px 14px; }
 #brandSelect option { font-size: 16px; }
 
-/* Summary */
-.summary {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 10px;
-  margin: 10px 0 16px;
-}
-
-.summary-card {
-  background: rgba(18,20,27,.55);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 12px;
-}
-
-.summary-title { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
-.summary-value { font-size: 13px; line-height: 1.35; }
-
 /* ===== Home brand cards (promo-grid reused) ===== */
 .promo-grid {
   display: grid;
