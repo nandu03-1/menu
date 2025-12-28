@@ -16,7 +16,7 @@
     { "flavor": "Cherry Fiesta", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
     { "flavor": "Cherry Ice", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
 
-    { "flavor": "Cool Mango", "price": 20, "image": "images/crownBar/cm.jpeg", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Cool Mango", "price": 20, "image": "images/crownBar/cm.jpeg", "tags": [], "soldOut": true },
     { "flavor": "Fusion Pop", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Grape Berry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Grape Mint", "price": 20, "image": "images/crownBar/gm.jpeg", "tags": [], "soldOut": false },
@@ -25,7 +25,7 @@
     { "flavor": "Ice Blue", "price": 20, "image": "images/crownBar/bi.jpeg", "tags": [], "soldOut": false },
     { "flavor": "Lemon Lime", "price": 20, "image": "images/crownBar/ll.jpeg", "tags": [], "soldOut": false },
 
-    { "flavor": "Lemon Mint", "price": 20, "image": "images/crownBar/lm.jpeg", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Lemon Mint", "price": 20, "image": "images/crownBar/lm.jpeg", "tags": [], "soldOut": true },
     { "flavor": "Lush Ice", "price": 20, "image": "images/crownBar/li.jpeg", "tags": [], "soldOut": false },
     { "flavor": "Magic Love", "price": 20, "image": "images/crownBar/ml.jpeg", "tags": [], "soldOut": false },
     { "flavor": "Mango Pineapple", "price": 20, "image": "images/crownBar/mp.jpeg", "tags": [], "soldOut": false },
@@ -33,16 +33,16 @@
     { "flavor": "Mixed Berry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Orange Mint", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
 
-    { "flavor": "Peach Ice", "price": 20, "image": "images/crownBar/pi.jpg", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Peach Ice", "price": 20, "image": "images/crownBar/pi.jpg", "tags": [], "soldOut": true },
     { "flavor": "Pineapple Ice", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Space Dream", "price": 20, "image": "images/crownBar/sd.jpeg", "tags": [], "soldOut": false },
     { "flavor": "Spearmint", "price": 20, "image": "images/crownBar/spearmint.png", "tags": [], "soldOut": false },
     { "flavor": "Strawberry Cherry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
 
-    { "flavor": "Strawberry Punch", "price": 20, "image": "images/crownBar/sp.jpeg", "tags": ["soldout"], "soldOut": true },
-    { "flavor": "Two Apple", "price": 20, "image": "images/crownBar/cba.webp", "tags": ["soldout"], "soldOut": true },
+    { "flavor": "Strawberry Punch", "price": 20, "image": "images/crownBar/sp.jpeg", "tags": [], "soldOut": true },
+    { "flavor": "Two Apple", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Watermelon Cherry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Watermelon Kiwi", "price": 20, "image": "images/crownBar/cba.webp", "tags": ["soldout"], "soldOut": true },
-    { "flavor": "Watermelon Pineapple", "price": 20, "image": "images/crownBar/cba.webp", "tags": ["soldout"], "soldOut": true }
+    { "flavor": "Watermelon Kiwi", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": true },
+    { "flavor": "Watermelon Pineapple", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": true }
   ]
 }
