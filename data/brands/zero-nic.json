@@ -1,0 +1,144 @@
+{
+  "brand": {
+    "name": "Zero Nic Vaped",
+    "puffs": "2k - 25k puffs",
+    "priceText": "$10 - $30",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "UNC Spearmint",
+      "price": 12,
+      "image": "images/zeronic/uncs.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "UNC Cool Mint",
+      "price": 12,
+      "image": "images/zeronic/unccm.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "UNC Blueberry Ice",
+      "price": 12,
+      "image": "images/zeronic/uncbi.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "UNC Mango Ice",
+      "price": 12,
+      "image": "images/zeronic/uncmi.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "UNC Colombian Tobacco",
+      "price": 12,
+      "image": "images/zeronic/uncci.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "UNC Clear Ice",
+      "price": 12,
+      "image": "images/zeronic/uncci.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "UNC Peach Mango Watermelon",
+      "price": 12,
+      "image": "images/zeronic/uncpmw.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "UNC Black Ice",
+      "price": 12,
+      "image": "images/zeronic/uncblacki.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+      {
+      "flavor": "Lava CLear",
+      "price": 10,
+      "image": "images/zeronic/clear.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Lava CLear Ice",
+      "price": 10,
+      "image": "images/zeronic/clearice.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Lava Cool Mint",
+      "price": 10,
+      "image": "images/zeronic/coolmint.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Lava Sour Apple Ice",
+      "price": 10,
+      "image": "images/zeronic/sourai.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Lava Spearmint",
+      "price": 10,
+      "image": "images/zeronic/spearmint.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Geekbar 15k Strawberry B Pop",
+      "price": 25,
+      "image": "images/zeronic/sbp.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Geekbar 15k Miami Mint",
+      "price": 25,
+      "image": "images/zeronic/mm7500.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Geekbar 25k Strawberry B Burst",
+      "price": 30,
+      "image": "images/zeronic/sbpx.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Geekbar 25k Miami Mint",
+      "price": 30,
+      "image": "images/zeronic/mmx.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Geekbar 25k Blue Rancher",
+      "price": 30,
+      "image": "images/zeronic/brx.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Big Boy CLear",
+      "price": 18,
+      "image": "images/zeronic/boyc.jpg",
+      "tags": [],
+      "soldOut": false
+    }
+
+  ]
+}
