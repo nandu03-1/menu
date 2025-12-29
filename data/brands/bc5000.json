@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "Elf Bar bc5000",
+    "puffs": "5,000 puffs",
+    "priceText": "$18",
+    "dealText": "2 for $35"
+  },
+  "flavors": [
+    {
+      "flavor": "CLear",
+      "price": 18,
+      "image": "images/bc5000/c.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Miami Mint",
+      "price": 18,
+      "image": "images/bc5000/mm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Sakura Grape",
+      "price": 18,
+      "image": "images/bc5000/sg.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Ice",
+      "price": 18,
+      "image": "images/bc5000/wi.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Banana",
+      "price": 18,
+      "image": "images/bc5000/sb.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Watermelon",
+      "price": 18,
+      "image": "images/bc5000/sw.webp",
+      "tags": [],
+      "soldOut": false
+    }
+
+    ]
+}
