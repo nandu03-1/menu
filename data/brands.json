@@ -142,5 +142,24 @@
     "dealText": "",
     "cardImage": "./images/promos/tyson-15k.webp",
     "file": "./data/brands/tyson-15k.json"
+  },
+  {
+    "id": "Zero-Nic",
+    "name": "Zero Nic Vapes",
+    "puffs": "2K - 25K",
+    "priceText": "$10 - $30",
+    "dealText": "",
+    "cardImage": "./images/promos/zeronic.webp",
+    "file": "./data/brands/zero-nic.json"
+  },
+  {
+    "id": "Lava Big Boy",
+    "name": "Lava Big Boy",
+    "puffs": "7,000 puffs",
+    "priceText": "$18",
+    "dealText": "",
+    "cardImage": "./images/lavabig/logo.jpeg",
+    "file": "./data/brands/lavabigboy.json"
   }
+  
 ]
