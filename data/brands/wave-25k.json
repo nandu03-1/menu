@@ -234,14 +234,14 @@
       "flavor": "Wild Cherry Slushie",
       "price": 30,
       "image": "./images/promos/wave25k.png",
-      "tags": [],
+      "tags": ["New"],
       "soldOut": false
     },
     {
       "flavor": "Sour Fcuking Fab",
       "price": 30,
       "image": "./images/promos/wave25k.png",
-      "tags": [],
+      "tags": ["New"],
       "soldOut": false
     }
   ]
