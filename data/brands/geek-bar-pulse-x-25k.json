@@ -101,7 +101,7 @@
       "flavor": "Strawberry Dragon",
       "price": 30,
       "image": "images/geekbar-pulse-x-25k/strawberry-dragon.png",
-      "tags": [],
+      "tags": ["New"],
       "soldOut": false
     },
     {
@@ -129,7 +129,7 @@
       "flavor": "Orange Mint",
       "price": 30,
       "image": "images/geekbar-pulse-x-25k/orange-mint.png",
-      "tags": [],
+      "tags": ["New"],
       "soldOut": false
     },
     {
@@ -262,6 +262,34 @@
       "flavor": "Pink & Blue",
       "price": 30,
       "image": "images/geekbar-pulse-x-25k/pink-blue.png",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Lime Berry Orange B Pop",
+      "price": 30,
+      "image": "images/geekbar-pulse-x-25k/lime-berry-orange.png",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Alt Mint",
+      "price": 30,
+      "image": "images/geekbar-pulse-x-25k/atl-mint.png",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Strawberry Colada",
+      "price": 30,
+      "image": "images/geekbar-pulse-x-25k/strawberry-colada.png",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Wild Cherry Slush",
+      "price": 30,
+      "image": "images/geekbar-pulse-x-25k/wild-cherry-slush.png",
       "tags": [],
       "soldOut": false
     }
