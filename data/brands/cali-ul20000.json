@@ -31,7 +31,7 @@
       "flavor": "Blue Raspberry Lemonade",
       "price": 25,
       "image": "images/cali20k/brl.jpg",
-      "tags": ["soldout"],
+      "tags": [],
       "soldOut": true
     },
     {
@@ -45,7 +45,7 @@
       "flavor": "Coconut Banana",
       "price": 25,
       "image": "images/cali20k/cb.jpg",
-      "tags": ["soldout"],
+      "tags": [],
       "soldOut": true
     },
     {
