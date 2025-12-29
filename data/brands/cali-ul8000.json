@@ -14,7 +14,7 @@
       "soldOut": false
     },
     {
-      "flavor": "Frozen Apple Watermelon",
+      "flavor": "Frozen Apple Watermelon 3%",
       "price": 18,
       "image": "images/cali8k/faw.jpg",
       "tags": [],
@@ -32,7 +32,7 @@
       "price": 18,
       "image": "images/cali8k/fp.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Frozen Strawberry Raspberry",
@@ -42,7 +42,21 @@
       "soldOut": false
     },
     {
+      "flavor": "Frozen Strawberry Raspberry 3%",
+      "price": 18,
+      "image": "images/cali8k/fsr.webp",
+      "tags": [],
+      "soldOut": false 
+    },
+    {
       "flavor": "Strawberry Banana",
+      "price": 18,
+      "image": "images/cali8k/sb.webp",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Strawberry Banana 3%",
       "price": 18,
       "image": "images/cali8k/sb.webp",
       "tags": [],
@@ -60,7 +74,7 @@
       "price": 18,
       "image": "images/cali8k/fb.webp",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Frozen Blue Raspberry",
