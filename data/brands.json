@@ -3,8 +3,8 @@
     "id": "Clearance",
     "name": "Clearance",
     "puffs": "",
-    "priceText": "$10 to $15",
-    "dealText": "",
+    "priceText": "",
+    "dealText": "$10 to $15",
     "cardImage": "./images/promos/clearance.avif",
     "file": "./data/brands/clearance.json"
   },
