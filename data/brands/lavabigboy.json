@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "Lava Big Boy",
+    "puffs": "7,000 puffs",
+    "priceText": "$18",
+    "dealText": "2 for $35"
+  },
+  "flavors": [
+    {
+      "flavor": "CLear",
+      "price": 18,
+      "image": "images/lavabig/c.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "CLear Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    }
+
+  ]
+    }
