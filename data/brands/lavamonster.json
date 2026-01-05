@@ -1,0 +1,24 @@
+{
+  "brand": {
+    "name": "Lava Monster",
+    "puffs": "25,000 puffs",
+    "priceText": "$25",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Cool Mint",
+      "price": 25,
+      "image": "images/lavamonster/cm.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+       {
+      "flavor": "Clear Ice",
+      "price": 25,
+      "image": "images/lavamonster/im.jpg",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
