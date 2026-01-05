@@ -1,0 +1,80 @@
+{
+  "brand": {
+    "name": "Lava Click Kit/Pod",
+    "puffs": "30,000 puffs",
+    "priceText": "$28",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Clear Ice",
+      "price": 25,
+      "image": "images/lavaclick/ci.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Grape Ice 3%",
+      "price": 25,
+      "image": "images/lavaclick/gi.jpeg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Peach Ice",
+      "price": 25,
+      "image": "images/lavaclick/pi.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "White Gummy Ice",
+      "price": 25,
+      "image": "images/lavaclick/wgi.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Jolly Rancher Ice",
+      "price": 25,
+      "image": "images/lavaclick/ji.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Chill Menthol",
+      "price": 25,
+      "image": "images/lavaclick/chillm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Spearmint 3%",
+      "price": 25,
+      "image": "images/lavaclick/spear.jpeg",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Watermelon Mint",
+      "price": 25,
+      "image": "images/lavaclick/wm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Cool Mint",
+      "price": 25,
+      "image": "images/lavaclick/cm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Peach Mango watermelon",
+      "price": 25,
+      "image": "images/lavaclick/pmw.webp",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
