@@ -178,6 +178,33 @@
     "dealText": "2 for $35",
     "cardImage": "./images/bc5000/logo.webp",
     "file": "./data/brands/bc5000.json"
+  },
+     {
+    "id": "Lava Monster",
+    "name": "Lava Monster",
+    "puffs": "25,000 puffs",
+    "priceText": "$25",
+    "dealText": "",
+    "cardImage": "./images/lavamonster/lm.jpg",
+    "file": "./data/brands/lavamonster.json"
+  },
+     {
+    "id": "Flair Ultra",
+    "name": "Flair Ultra",
+    "puffs": "2,500 puffs",
+    "priceText": "$12",
+    "dealText": "",
+    "cardImage": "./images/flairultra/cm.jpg",
+    "file": "./data/brands/flairultra.json"
+  },
+     {
+    "id": "Hyppe Max Flow",
+    "name": "Hyppe Max Flow",
+    "puffs": "2,000 puffs",
+    "priceText": "$15",
+    "dealText": "",
+    "cardImage": "./images/hyppemaxflow/logo.webp",
+    "file": "./data/brands/hyppemaxflow.json"
   }
    
 ]
