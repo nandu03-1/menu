@@ -205,6 +205,15 @@
     "dealText": "",
     "cardImage": "./images/hyppemaxflow/logo.webp",
     "file": "./data/brands/hyppemaxflow.json"
+  },
+    {
+    "id": "Lava Click Kit/Pod",
+    "name": "Lava Click Kit/Pod",
+    "puffs": "30,000 puffs",
+    "priceText": "$25",
+    "dealText": "",
+    "cardImage": "./images/lavaclick/cm.webp",
+    "file": "./data/brands/lavaclick.json"
   }
    
 ]
