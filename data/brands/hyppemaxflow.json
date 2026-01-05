@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "Hyppe Max Flow",
+    "puffs": "2,000 puffs",
+    "priceText": "$15",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Aloe Grape",
+      "price": 15,
+      "image": "images/hyppemaxflow/ag.jpeg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Glacier Mint",
+      "price": 15,
+      "image": "images/hyppemaxflow/gm.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Mighty Mint",
+      "price": 15,
+      "image": "images/hyppemaxflow/mm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Mighty Menthol",
+      "price": 15,
+      "image": "images/hyppemaxflow/mm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Tribacco",
+      "price": 15,
+      "image": "images/hyppemaxflow/t.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Virginia Tobacco",
+      "price": 15,
+      "image": "images/hyppemaxflow/vt.webp",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
+    
