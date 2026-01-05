@@ -14,7 +14,140 @@
       "soldOut": false
     },
     {
-      "flavor": "CLear Ice",
+      "flavor": "CLear Ice 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Naked",
+      "price": 18,
+      "image": "images/lavabig/fn.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Spark Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Jolly Rancher Ice 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Mint",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Watermelon Peach",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Frozen Skittles 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blueberry Raspberry 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blue Razz Lemon",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Peach Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Spearmint 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Bubblegum",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Ice Grape 3%",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Black Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Sour Apple Ice",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Tropical Punch",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Passion Fruit Melon",
+      "price": 18,
+      "image": "images/lavabig/ci.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cubban Tobacco 3%",
       "price": 18,
       "image": "images/lavabig/ci.png",
       "tags": [],
