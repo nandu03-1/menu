@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Flair Ultra",
+    "puffs": "2,500 puffs",
+    "priceText": "$12",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "CLear",
+      "price": 12,
+      "image": "images/flairultra/c.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Ice",
+      "price": 12,
+      "image": "images/flairultra/si.jpeg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Black Ice",
+      "price": 12,
+      "image": "images/flairultra/bi.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 12,
+      "image": "images/flairultra/cm.png",
+      "tags": [],
+      "soldOut": false
+    },
+   {
+      "flavor": "Grape Ice",
+      "price": 12,
+      "image": "images/flairultra/gi.png",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Kiwi",
+      "price": 12,
+      "image": "images/flairultra/sk.jpg",
+      "tags": [],
+      "soldOut": false
+    }
+  ]
+}
