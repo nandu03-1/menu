@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # ---------------------------------------
+  # HOME PAGE CARDS (edits data/brands.json)
+  # ---------------------------------------
+  - name: "brands_index"
+    label: "Home Page Cards"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "brands"
+        label: "Brands list (brands.json)"
+        file: "data/brands.json"
+        format: "json"
+        fields:
+          # IMPORTANT: your brands.json is a top-level array, so name is "".
+          - label: "Brands"
+            name: ""
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Puffs", name: "puffs", widget: "string", required: false }
+              - { label: "Price Text", name: "priceText", widget: "string", required: false }
+              - { label: "Deal Text (ex: CLEARANCE / 2 for $..)", name: "dealText", widget: "string", required: false }
+              - { label: "Card Image", name: "cardImage", widget: "image", required: false }
+              - { label: "Brand File Path", name: "file", widget: "string" }
+
+              # Optional (recommended for reliable sorting later)
+              - { label: "Clearance", name: "clearance", widget: "boolean", required: false, default: false }
+              - { label: "Sort Price", name: "sortPrice", widget: "number", required: false, value_type: "float" }
+
+  # ---------------------------------------
+  # BRAND FILES (edits data/brands/*.json)
+  # ---------------------------------------
+  - name: "brand_files"
+    label: "Brand Menus (Flavors)"
+    folder: "data/brands"
+    create: true
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - label: "Brand"
+        name: "brand"
+        widget: "object"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Puffs", name: "puffs", widget: "string", required: false }
+          - { label: "Price Text", name: "priceText", widget: "string", required: false }
+          - { label: "Deal Text", name: "dealText", widget: "string", required: false }
+
+      - label: "Flavors"
+        name: "flavors"
+        widget: "list"
+        summary: "{{fields.flavor}}"
+        fields:
+          - { label: "Flavor", name: "flavor", widget: "string" }
+          - { label: "Price", name: "price", widget: "number", required: false, value_type: "float" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+
+          - label: "Tags"
+            name: "tags"
+            widget: "select"
+            multiple: true
+            required: false
+            options:
+              - { label: "NEW", value: "new" }
+              - { label: "TRENDING", value: "trending" }
+
+          - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
