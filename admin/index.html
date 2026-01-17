@@ -1,29 +1,70 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stardust Menu Admin</title>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stardust Admin</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:24px;max-width:1100px}
+    input,button,select{padding:10px;font-size:14px}
+    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .card{border:1px solid #ddd;border-radius:10px;padding:16px;margin:14px 0}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-bottom:1px solid #eee;padding:10px;text-align:left;vertical-align:top}
+    .muted{color:#666}
+    .hidden{display:none}
+    .tag{display:inline-block;padding:2px 8px;border:1px solid #ddd;border-radius:999px;margin-right:6px}
+  </style>
 
-    <!-- Required for Netlify git-gateway login -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
+  <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <h1>Stardust Menu Admin</h1>
 
-  <body>
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <div id="loginCard" class="card">
+    <h3>Login</h3>
+    <div class="row">
+      <input id="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <button id="logoutBtn" class="hidden">Logout</button>
+    </div>
+    <p id="loginMsg" class="muted"></p>
+  </div>
 
-    <script>
-      // Small UX improvement: after login, stay in /admin
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-  </body>
+  <div id="adminArea" class="hidden">
+    <div class="card">
+      <h3>Brands</h3>
+      <div class="row">
+        <button id="refreshBtn">Refresh</button>
+        <select id="brandSelect"></select>
+        <button id="newFlavorBtn">Add Flavor</button>
+      </div>
+      <p class="muted">Tip: edit sold-out / price / tags and click “Save”.</p>
+    </div>
+
+    <div class="card">
+      <h3>Flavors</h3>
+      <div style="overflow:auto">
+        <table id="flavorsTable">
+          <thead>
+            <tr>
+              <th>Flavor</th>
+              <th>Price</th>
+              <th>Image path</th>
+              <th>Tags (comma)</th>
+              <th>Sold out</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted">Image path example: <code>images/bc5000/mm.webp</code> (keep using your repo images for now).</p>
+    </div>
+  </div>
+
+  <script src="./admin.js"></script>
+</body>
 </html>
