@@ -268,7 +268,7 @@
       "clearance": false,
       "id": "vuse",
       "name": "Vuse",
-      "priceText": "25",
+      "priceText": "$25",
       "cardImage": "https://content-eu-live-global.prod.marketing.bat.net/media/wysiwyg/classic_packs_1.png",
       "file": "./data/brands/vuse.json",
       "sortPrice": 0
