@@ -44,6 +44,19 @@ function slugify(s) {
 }
 
 async function refreshAuthUI() {
+  const recovery = isRecoveryVisit();
+
+  // If this is a recovery visit, ALWAYS show auth view + recovery box,
+  // even if a session exists (Supabase creates a temporary session).
+  if (recovery) {
+    el("recoveryBox").classList.remove("hidden");
+    el("authView").classList.remove("hidden");
+    el("adminView").classList.add("hidden");
+    el("logoutBtn").classList.add("hidden");
+    showMsg("authMsg", "Enter a new password below to finish resetting.");
+    return;
+  }
+
   const { data: { session } } = await supabase.auth.getSession();
 
   const loggedIn = !!session?.user;
@@ -57,6 +70,7 @@ async function refreshAuthUI() {
     await loadAll();
   }
 }
+
 
 /* ------------------------
    AUTH (login / forgot / recovery)
@@ -97,8 +111,14 @@ async function setNewPassword() {
   const { error } = await supabase.auth.updateUser({ password: newPassword });
   if (error) return showMsg("authMsg", `Update failed: ${error.message}`);
 
+  // Clear recovery URL so refresh doesn't re-trigger recovery mode
+  history.replaceState(null, "", window.location.pathname);
+
   el("recoveryBox").classList.add("hidden");
-  showMsg("authMsg", "Password updated. You can continue in admin.");
+  showMsg("authMsg", "Password updated. Now you can login with the new password.");
+
+  // Optionally sign out so user does a clean login:
+  await supabase.auth.signOut();
 }
 
 /* When user clicks recovery email, Supabase sets session state to PASSWORD_RECOVERY */
@@ -494,3 +514,18 @@ el("addFlavorBtn").onclick = addFlavor;
 // Init
 refreshAuthUI().catch((e) => showMsg("authMsg", String(e)));
 
+function isRecoveryVisit() {
+  const hash = window.location.hash || "";
+  const qs = window.location.search || "";
+  const params = new URLSearchParams(qs);
+
+  // Supabase can send either:
+  // 1) hash with type=recovery
+  // 2) query with type=recovery
+  // 3) query with code (PKCE) + type=recovery in hash
+  return (
+    hash.includes("type=recovery") ||
+    params.get("type") === "recovery" ||
+    hash.includes("recovery_token") // older style
+  );
+}
