@@ -1,268 +1,277 @@
 {
   "brands": [
     {
-      "id": "clearance",
+      "cardImage": "./images/promos/clearance.avif",
+      "sortPrice": 10,
       "name": "Clearance",
       "puffs": "",
       "priceText": "",
       "dealText": "$10 to $15",
-      "cardImage": "./images/promos/clearance.avif",
-      "file": "./data/brands/clearance.json",
+      "id": "clearance",
       "clearance": true,
-      "sortPrice": 10
+      "file": "./data/brands/clearance.json"
     },
     {
-      "id": "lava-plus",
+      "cardImage": "./images/promos/lavaplus.webp",
+      "sortPrice": 10,
       "name": "Lava Plus",
       "puffs": "2,600 puffs",
       "priceText": "$10",
       "dealText": "",
-      "cardImage": "./images/promos/lavaplus.webp",
-      "file": "./data/brands/lava-plus.json",
+      "id": "lava-plus",
       "clearance": false,
-      "sortPrice": 10
+      "file": "./data/brands/lava-plus.json"
     },
     {
-      "id": "flair-ultra",
+      "cardImage": "./images/flairultra/cm.png",
+      "sortPrice": 12,
       "name": "Flair Ultra",
       "puffs": "2,500 puffs",
       "priceText": "$12",
       "dealText": "",
-      "cardImage": "./images/flairultra/cm.png",
-      "file": "./data/brands/flairultra.json",
+      "id": "flair-ultra",
       "clearance": false,
-      "sortPrice": 12
+      "file": "./data/brands/flairultra.json"
     },
     {
-      "id": "hyppe-max-flow",
+      "cardImage": "./images/hyppemaxflow/logo.webp",
+      "sortPrice": 15,
       "name": "Hyppe Max Flow",
       "puffs": "2,000 puffs",
       "priceText": "$15",
       "dealText": "",
-      "cardImage": "./images/hyppemaxflow/logo.webp",
-      "file": "./data/brands/hyppemaxflow.json",
+      "id": "hyppe-max-flow",
       "clearance": false,
-      "sortPrice": 15
+      "file": "./data/brands/hyppemaxflow.json"
     },
     {
-      "id": "cali-ul8000",
+      "cardImage": "./images/promos/cali8k.jpg",
+      "sortPrice": 18,
       "name": "Cali UL8000",
       "puffs": "8,000 puffs",
       "priceText": "$18",
       "dealText": "",
-      "cardImage": "./images/promos/cali8k.jpg",
-      "file": "./data/brands/cali-ul8000.json",
+      "id": "cali-ul8000",
       "clearance": false,
-      "sortPrice": 18
+      "file": "./data/brands/cali-ul8000.json"
     },
     {
-      "id": "elf-bar-bc5000",
+      "cardImage": "./images/bc5000/logo.webp",
+      "sortPrice": 18,
       "name": "Elf Bar BC5000",
       "puffs": "5,000 puffs",
       "priceText": "$18",
       "dealText": "2 for $35",
-      "cardImage": "./images/bc5000/logo.webp",
-      "file": "./data/brands/bc5000.json",
+      "id": "elf-bar-bc5000",
       "clearance": false,
-      "sortPrice": 18
+      "file": "./data/brands/bc5000.json"
     },
     {
-      "id": "lava-big-boy",
+      "cardImage": "./images/lavabig/logo.jpeg",
+      "sortPrice": 18,
       "name": "Lava Big Boy",
       "puffs": "7,000 puffs",
       "priceText": "$18",
       "dealText": "2 for $35",
-      "cardImage": "./images/lavabig/logo.jpeg",
-      "file": "./data/brands/lavabigboy.json",
+      "id": "lava-big-boy",
       "clearance": false,
-      "sortPrice": 18
+      "file": "./data/brands/lavabigboy.json"
     },
     {
-      "id": "crown-bar-8k",
+      "cardImage": "./images/promos/cb.webp",
+      "sortPrice": 20,
       "name": "Crown Bar 8K",
       "puffs": "8,000 puffs",
       "priceText": "$20",
       "dealText": "",
-      "cardImage": "./images/promos/cb.webp",
-      "file": "./data/brands/crown-bar-8k.json",
+      "id": "crown-bar-8k",
       "clearance": false,
-      "sortPrice": 20
+      "file": "./data/brands/crown-bar-8k.json"
     },
     {
-      "id": "tyson-15k",
+      "cardImage": "./images/promos/tyson-15k.webp",
+      "sortPrice": 22,
       "name": "Iron Mike Tyson 15K",
       "puffs": "15,000 puffs",
       "priceText": "$22",
       "dealText": "",
-      "cardImage": "./images/promos/tyson-15k.webp",
-      "file": "./data/brands/tyson-15k.json",
+      "id": "tyson-15k",
       "clearance": false,
-      "sortPrice": 22
+      "file": "./data/brands/tyson-15k.json"
     },
     {
-      "id": "geek-bar-pulse-15k",
+      "cardImage": "./images/promos/geek15k.jpg",
+      "sortPrice": 25,
       "name": "Geek Bar Pulse 15K",
       "puffs": "15,000 puffs",
       "priceText": "$25",
       "dealText": "2 for $40",
-      "cardImage": "./images/promos/geek15k.jpg",
-      "file": "./data/brands/geek-bar-pulse-15k.json",
+      "id": "geek-bar-pulse-15k",
       "clearance": false,
-      "sortPrice": 25
+      "file": "./data/brands/geek-bar-pulse-15k.json"
     },
     {
-      "id": "cali-ul20000",
+      "cardImage": "./images/promos/cali20k.jpg",
+      "sortPrice": 25,
       "name": "Cali UL20000",
       "puffs": "20,000 puffs",
       "priceText": "$25",
       "dealText": "",
-      "cardImage": "./images/promos/cali20k.jpg",
-      "file": "./data/brands/cali-ul20000.json",
+      "id": "cali-ul20000",
       "clearance": false,
-      "sortPrice": 25
+      "file": "./data/brands/cali-ul20000.json"
     },
     {
-      "id": "lava-monster",
+      "cardImage": "./images/lavamonster/lm.jpg",
+      "sortPrice": 25,
       "name": "Lava Monster",
       "puffs": "25,000 puffs",
       "priceText": "$25",
       "dealText": "",
-      "cardImage": "./images/lavamonster/lm.jpg",
-      "file": "./data/brands/lavamonster.json",
+      "id": "lava-monster",
       "clearance": false,
-      "sortPrice": 25
+      "file": "./data/brands/lavamonster.json"
     },
     {
-      "id": "lava-click-kit-pod",
+      "cardImage": "./images/lavaclick/cm.webp",
+      "sortPrice": 25,
       "name": "Lava Click Kit/Pod",
       "puffs": "30,000 puffs",
       "priceText": "$25",
       "dealText": "",
-      "cardImage": "./images/lavaclick/cm.webp",
-      "file": "./data/brands/lavaclick.json",
+      "id": "lava-click-kit-pod",
       "clearance": false,
-      "sortPrice": 25
+      "file": "./data/brands/lavaclick.json"
     },
     {
-      "id": "tyson-30k",
+      "cardImage": "./images/promos/tyson30k.jpg",
+      "sortPrice": 28,
       "name": "Tyson 30K",
       "puffs": "30,000 puffs",
       "priceText": "$28",
       "dealText": "",
-      "cardImage": "./images/promos/tyson30k.jpg",
-      "file": "./data/brands/tyson-30k.json",
+      "id": "tyson-30k",
       "clearance": false,
-      "sortPrice": 28
+      "file": "./data/brands/tyson-30k.json"
     },
     {
-      "id": "geek-bar-pulse-x-25k",
+      "cardImage": "./images/promos/geek25k.jpg",
+      "sortPrice": 30,
       "name": "Geek Bar Pulse X 25K",
       "puffs": "25,000 puffs",
       "priceText": "$30",
       "dealText": "2 for $50",
-      "cardImage": "./images/promos/geek25k.jpg",
-      "file": "./data/brands/geek-bar-pulse-x-25k.json",
+      "id": "geek-bar-pulse-x-25k",
       "clearance": false,
-      "sortPrice": 30
+      "file": "./data/brands/geek-bar-pulse-x-25k.json"
     },
     {
-      "id": "wave-25k",
+      "cardImage": "./images/promos/wave25k.png",
+      "sortPrice": 30,
       "name": "Wave 25K",
       "puffs": "25,000 puffs",
       "priceText": "$30",
       "dealText": "2 for $50",
-      "cardImage": "./images/promos/wave25k.png",
-      "file": "./data/brands/wave-25k.json",
+      "id": "wave-25k",
       "clearance": false,
-      "sortPrice": 30
+      "file": "./data/brands/wave-25k.json"
     },
     {
-      "id": "raz-25k",
+      "cardImage": "./images/promos/raz25k.webp",
+      "sortPrice": 30,
       "name": "Raz 25K",
       "puffs": "25,000 puffs",
       "priceText": "$30",
       "dealText": "2 for $50",
-      "cardImage": "./images/promos/raz25k.webp",
-      "file": "./data/brands/raz-25k.json",
+      "id": "raz-25k",
       "clearance": false,
-      "sortPrice": 30
+      "file": "./data/brands/raz-25k.json"
     },
     {
-      "id": "foyo-maxx-50k",
+      "cardImage": "./images/foyo50k/bri.jpeg",
+      "sortPrice": 30,
       "name": "Foyo Maxx 50K",
       "puffs": "50,000 puffs",
       "priceText": "$30",
       "dealText": "",
-      "cardImage": "./images/foyo50k/bri.jpeg",
-      "file": "./data/brands/foyo-maxx-50k.json",
+      "id": "foyo-maxx-50k",
       "clearance": false,
-      "sortPrice": 30
+      "file": "./data/brands/foyo-maxx-50k.json"
     },
     {
-      "id": "flair-sniper-45k",
+      "cardImage": "./images/promos/flairsni.png",
+      "sortPrice": 35,
       "name": "Flair Sniper 45K",
       "puffs": "45,000 puffs",
       "priceText": "$35",
       "dealText": "New",
-      "cardImage": "./images/promos/flairsni.png",
-      "file": "./data/brands/flair-sniper-45k.json",
+      "id": "flair-sniper-45k",
       "clearance": false,
-      "sortPrice": 35
+      "file": "./data/brands/flair-sniper-45k.json"
     },
     {
-      "id": "wave-40k",
+      "cardImage": "./images/promos/wave40k.jpg",
+      "sortPrice": 35,
       "name": "Wave 40K",
       "puffs": "40,000 puffs",
       "priceText": "$35",
       "dealText": "",
-      "cardImage": "./images/promos/wave40k.jpg",
-      "file": "./data/brands/wave-40k.json",
+      "id": "wave-40k",
       "clearance": false,
-      "sortPrice": 35
+      "file": "./data/brands/wave-40k.json"
     },
     {
-      "id": "raz-50k",
+      "cardImage": "./images/promos/raz50k.jpeg",
+      "sortPrice": 35,
       "name": "Raz 50K",
       "puffs": "50,000 puffs",
       "priceText": "$35",
       "dealText": "New",
-      "cardImage": "./images/promos/raz50k.jpeg",
-      "file": "./data/brands/raz-50k.json",
+      "id": "raz-50k",
       "clearance": false,
-      "sortPrice": 35
+      "file": "./data/brands/raz-50k.json"
     },
     {
-      "id": "hyppe-infinity-50k",
+      "cardImage": "./images/promos/hyppe.webp",
+      "sortPrice": 35,
       "name": "Hyppe Infinity 50K",
       "puffs": "50,000 puffs",
       "priceText": "$35",
       "dealText": "",
-      "cardImage": "./images/promos/hyppe.webp",
-      "file": "./data/brands/hyppe-50k.json",
+      "id": "hyppe-infinity-50k",
       "clearance": false,
-      "sortPrice": 35
+      "file": "./data/brands/hyppe-50k.json"
     },
     {
-      "id": "zero-nic",
+      "cardImage": "./images/promos/zeronic.webp",
+      "sortPrice": 10,
       "name": "Zero Nic Vapes",
       "puffs": "2K - 25K",
       "priceText": "$10 - $30",
       "dealText": "",
-      "cardImage": "./images/promos/zeronic.webp",
-      "file": "./data/brands/zero-nic.json",
+      "id": "zero-nic",
       "clearance": false,
-      "sortPrice": 10
+      "file": "./data/brands/zero-nic.json"
     },
     {
-      "id": "fifty-bar-20k",
+      "cardImage": "./images/promos/fbarpromo.webp",
+      "sortPrice": 25,
       "name": "Fifty Bar 20K",
       "puffs": "25,000 puffs",
       "priceText": "$25",
       "dealText": "",
-      "cardImage": "./images/promos/fbarpromo.webp",
-      "file": "./data/brands/fifty-bar-20k.json",
+      "id": "fifty-bar-20k",
       "clearance": false,
-      "sortPrice": 25
+      "file": "./data/brands/fifty-bar-20k.json"
+    },
+    {
+      "clearance": false,
+      "id": "vuse",
+      "name": "Vuse",
+      "priceText": "25",
+      "cardImage": "https://content-eu-live-global.prod.marketing.bat.net/media/wysiwyg/classic_packs_1.png",
+      "file": "vuse.json",
+      "sortPrice": 0
     }
   ]
 }
