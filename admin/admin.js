@@ -194,3 +194,14 @@ el("newFlavorBtn").onclick = async () => {
 // Init
 supabase.auth.onAuthStateChange(() => setUIForAuth());
 setUIForAuth();
+
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+
+const SUPABASE_URL = "https://aldvugeyjwjtwcwgcfij.supabase.co"
+const SUPABASE_ANON_KEY = "sb_publishable_3l-ZjBLZVB5r3bBhfvk23A_dwEVenDy"
+
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+)
+
