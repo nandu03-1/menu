@@ -1,58 +1,24 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 /**
- * IMPORTANT:
  * Put your real values here.
- * - Supabase URL: Settings → API → Project URL
- * - Anon key: Settings → API Keys → Publishable key
  */
 const SUPABASE_URL = "https://aldvugeyjwjtwcwgcfij.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_3l-ZjBLZVB5r3bBhfvk23A_dwEVenDy";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
-    // helps a lot on static hosting (GitHub Pages)
-    persistSession: true,
-    autoRefreshToken: true,
     detectSessionInUrl: true,
-    flowType: "pkce",
+    persistSession: true,
   },
 });
 
 const el = (id) => document.getElementById(id);
 const showMsg = (id, msg) => {
-  const n = el(id);
-  if (n) n.textContent = msg || "";
+  const node = el(id);
+  if (node) node.textContent = msg || "";
 };
 
-let brands = [];
-let activeBrandId = null;
-let flavorsByBrand = new Map();
-
-/* ------------------------
-   ORDERING / HELPERS
--------------------------*/
-function homeOrderKey(b) {
-  const clearance = b.clearance ? 0 : 1;
-  const sortPrice = b.sort_price ?? 999999;
-  const sortOrder = b.sort_order ?? 999999;
-  const name = (b.name || "").toLowerCase();
-  return [clearance, sortPrice, sortOrder, name];
-}
-function compareKeys(a, b) {
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] < b[i]) return -1;
-    if (a[i] > b[i]) return 1;
-  }
-  return 0;
-}
-function slugify(s) {
-  return String(s || "")
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
-}
 function escapeHtml(s) {
   return String(s ?? "")
     .replaceAll("&", "&amp;")
@@ -62,80 +28,98 @@ function escapeHtml(s) {
     .replaceAll("'", "&#039;");
 }
 
-/* ------------------------
-   PASSWORD RECOVERY DETECTION (IMPORTANT)
--------------------------*/
-function looksLikeRecoveryUrl() {
-  const hash = window.location.hash || "";
-  const qs = window.location.search || "";
-  const params = new URLSearchParams(qs);
-
-  // Supabase v2 can send:
-  // - #access_token=...&type=recovery
-  // - ?code=... (PKCE) with type=recovery
-  // - older: #recovery_token=...
-  return (
-    hash.includes("type=recovery") ||
-    params.get("type") === "recovery" ||
-    hash.includes("recovery_token") ||
-    hash.includes("access_token=") // treat token as recovery/confirmation visit
-  );
+function slugify(s) {
+  return String(s || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
 }
 
-// If the browser (Brave shields) blocks storage, password update fails.
-// This forces Supabase to parse the URL and store the session when needed.
-async function ensureSessionFromUrlIfNeeded() {
-  const { data: s1, error: s1e } = await supabase.auth.getSession();
-  if (s1e) throw s1e;
-  if (s1?.session?.user) return s1.session;
+function homeOrderKey(b) {
+  const clearance = b.clearance ? 0 : 1;
+  const sortPrice = b.sort_price ?? 999999;
+  const sortOrder = b.sort_order ?? 999999;
+  const name = (b.name || "").toLowerCase();
+  return [clearance, sortPrice, sortOrder, name];
+}
 
-  const { data, error } = await supabase.auth.getSessionFromUrl({
-    storeSession: true,
-  });
-  if (error) throw error;
-
-  const { data: s2, error: s2e } = await supabase.auth.getSession();
-  if (s2e) throw s2e;
-  if (!s2?.session?.user) {
-    throw new Error(
-      "No auth session found from the recovery link. If using Brave, disable Shields for this page and try again."
-    );
+function compareKeys(a, b) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] < b[i]) return -1;
+    if (a[i] > b[i]) return 1;
   }
-  return s2.session;
+  return 0;
 }
 
-/* This flag forces showing the Set Password UI while on recovery link */
-let FORCE_PASSWORD_RESET = looksLikeRecoveryUrl();
+/* ------------------------
+   STATE
+-------------------------*/
+let brands = [];
+let activeBrandId = null;
+let flavorsByBrand = new Map();
+
+/* ------------------------
+   RECOVERY DETECTION + SESSION EXCHANGE
+-------------------------*/
+function isRecoveryVisit() {
+  const url = new URL(window.location.href);
+  const hash = window.location.hash || "";
+  const type = url.searchParams.get("type");
+
+  // PKCE links often include ?code=... (sometimes with &type=recovery)
+  const hasCode = url.searchParams.has("code");
+  const hasRecoveryType = type === "recovery" || hash.includes("type=recovery");
+  const hasOldRecovery = hash.includes("recovery_token") || hash.includes("access_token=");
+
+  return (hasCode && hasRecoveryType) || hasOldRecovery || hasRecoveryType;
+}
+
+async function ensureSessionFromUrlIfNeeded() {
+  // If Supabase emailed a PKCE link, we must exchange code -> session.
+  const url = new URL(window.location.href);
+  const code = url.searchParams.get("code");
+
+  if (!code) return;
+
+  console.log("[auth] Found PKCE code in URL, exchanging for session...");
+  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  if (error) {
+    console.error("[auth] exchangeCodeForSession error:", error);
+    showMsg("authMsg", `Recovery link error: ${error.message}`);
+    return;
+  }
+
+  // Clean URL (remove code/type params)
+  url.searchParams.delete("code");
+  url.searchParams.delete("type");
+  window.history.replaceState({}, "", url.toString());
+}
 
 /* ------------------------
    AUTH UI
 -------------------------*/
 async function refreshAuthUI() {
-  // If we are on recovery visit, ALWAYS show auth view + recovery box
-  if (FORCE_PASSWORD_RESET || looksLikeRecoveryUrl()) {
-    FORCE_PASSWORD_RESET = true;
+  const recovery = isRecoveryVisit();
 
+  if (recovery) {
     el("recoveryBox")?.classList.remove("hidden");
     el("authView")?.classList.remove("hidden");
     el("adminView")?.classList.add("hidden");
     el("logoutBtn")?.classList.add("hidden");
-
     showMsg("authMsg", "Enter a new password below to finish resetting.");
     return;
   }
 
-  const { data, error } = await supabase.auth.getSession();
-  if (error) return showMsg("authMsg", String(error.message || error));
-
-  const session = data?.session;
+  const { data: { session } } = await supabase.auth.getSession();
   const loggedIn = !!session?.user;
 
   el("authView")?.classList.toggle("hidden", loggedIn);
   el("adminView")?.classList.toggle("hidden", !loggedIn);
   el("logoutBtn")?.classList.toggle("hidden", !loggedIn);
 
-  const userEmail = el("userEmail");
-  if (userEmail) userEmail.textContent = session?.user?.email || "";
+  const emailNode = el("userEmail");
+  if (emailNode) emailNode.textContent = session?.user?.email || "";
 
   if (loggedIn) {
     await loadAll();
@@ -143,91 +127,90 @@ async function refreshAuthUI() {
 }
 
 /* ------------------------
-   AUTH (login / forgot / reset)
+   AUTH ACTIONS
 -------------------------*/
-async function login() {
+async function login(e) {
+  if (e?.preventDefault) e.preventDefault();
+  console.log("[ui] login clicked");
+
   showMsg("authMsg", "");
   const email = el("email")?.value?.trim() || "";
   const password = el("password")?.value || "";
 
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) return showMsg("authMsg", `Login failed: ${error.message}`);
+  if (!email || !password) {
+    showMsg("authMsg", "Enter email + password.");
+    return;
+  }
 
-  FORCE_PASSWORD_RESET = false;
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    showMsg("authMsg", `Login failed: ${error.message}`);
+    return;
+  }
+
   await refreshAuthUI();
 }
 
-async function forgotPassword() {
+async function forgotPassword(e) {
+  if (e?.preventDefault) e.preventDefault();
+  console.log("[ui] forgotPassword clicked");
+
   showMsg("authMsg", "");
   const email = el("email")?.value?.trim() || "";
-  if (!email) return showMsg("authMsg", "Enter your email first.");
+  if (!email) {
+    showMsg("authMsg", "Enter your email first.");
+    return;
+  }
 
-  // GitHub Pages: explicit file path is safest
-  const redirectTo = `${location.origin}/menu/admin/index.html`;
+  // IMPORTANT: must be EXACT GitHub Pages URL
+  const redirectTo = `${location.origin}/menu/admin/index.html?type=recovery`;
 
-  const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo,
-  });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
+  if (error) {
+    showMsg("authMsg", `Reset failed: ${error.message}`);
+    return;
+  }
 
-  if (error) return showMsg("authMsg", `Reset failed: ${error.message}`);
   showMsg("authMsg", "Password reset email sent. Check inbox/spam.");
 }
 
-async function setNewPassword() {
+async function setNewPassword(e) {
+  if (e?.preventDefault) e.preventDefault();
+  console.log("[ui] setNewPassword clicked");
+
   showMsg("authMsg", "");
-  try {
-    const newPassword = el("newPassword")?.value || "";
-    if (newPassword.length < 6) {
-      return showMsg("authMsg", "Use at least 6 characters.");
-    }
+  const newPassword = el("newPassword")?.value || "";
 
-    // Ensure we have a valid recovery session
-    await ensureSessionFromUrlIfNeeded();
-
-    const { error } = await supabase.auth.updateUser({ password: newPassword });
-    if (error) return showMsg("authMsg", `Update failed: ${error.message}`);
-
-    // Clean URL (removes tokens so refresh doesn't re-trigger recovery mode)
-    FORCE_PASSWORD_RESET = false;
-    history.replaceState(null, "", window.location.pathname);
-
-    el("recoveryBox")?.classList.add("hidden");
-    showMsg("authMsg", "✅ Password updated! Loading admin...");
-
-    await refreshAuthUI();
-  } catch (e) {
-    showMsg(
-      "authMsg",
-      `Update failed: ${e?.message || String(e)}\n\nTip: If you're using Brave, disable Shields for this page and try the recovery link again.`
-    );
+  if (!newPassword || newPassword.length < 6) {
+    showMsg("authMsg", "Use at least 6 characters.");
+    return;
   }
+
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) {
+    showMsg("authMsg", `Update failed: ${error.message}`);
+    return;
+  }
+
+  // Clean recovery mode so it doesn't keep showing
+  const clean = `${location.origin}${location.pathname}`;
+  history.replaceState(null, "", clean);
+
+  el("recoveryBox")?.classList.add("hidden");
+  showMsg("authMsg", "Password updated. Now login with your new password.");
+
+  // Optional: sign out to force clean login
+  await supabase.auth.signOut();
+  await refreshAuthUI();
 }
 
-// Auth state changes
-supabase.auth.onAuthStateChange(async (event) => {
-  // PASSWORD_RECOVERY event is often fired on recovery link
-  if (event === "PASSWORD_RECOVERY") {
-    FORCE_PASSWORD_RESET = true;
-    await refreshAuthUI();
-    return;
-  }
+async function logout(e) {
+  if (e?.preventDefault) e.preventDefault();
+  console.log("[ui] logout clicked");
 
-  if (event === "SIGNED_OUT") {
-    FORCE_PASSWORD_RESET = false;
-    await refreshAuthUI();
-    return;
-  }
-
-  if (
-    event === "SIGNED_IN" ||
-    event === "TOKEN_REFRESHED" ||
-    event === "INITIAL_SESSION"
-  ) {
-    // If we are on recovery URL, keep forcing reset UI until password updated
-    if (looksLikeRecoveryUrl()) FORCE_PASSWORD_RESET = true;
-    await refreshAuthUI();
-  }
-});
+  await supabase.auth.signOut();
+  await refreshAuthUI();
+}
 
 /* ------------------------
    DATA LOAD
@@ -249,7 +232,7 @@ async function loadAll() {
     if (error) return showMsg("adminMsg", `Load flavors failed: ${error.message}`);
 
     flavorsByBrand = new Map();
-    for (const f of data || []) {
+    for (const f of (data || [])) {
       const arr = flavorsByBrand.get(f.brand_id) || [];
       arr.push(f);
       flavorsByBrand.set(f.brand_id, arr);
@@ -278,11 +261,8 @@ function renderBrandList() {
   if (!list) return;
 
   list.innerHTML = "";
-
   const filtered = brands.filter(
-    (b) =>
-      (b.name || "").toLowerCase().includes(q) ||
-      (b.id || "").toLowerCase().includes(q)
+    (b) => (b.name || "").toLowerCase().includes(q) || (b.id || "").toLowerCase().includes(q)
   );
 
   for (const b of filtered) {
@@ -290,9 +270,7 @@ function renderBrandList() {
     div.className = "item" + (b.id === activeBrandId ? " active" : "");
     div.innerHTML = `
       <div><b>${escapeHtml(b.name)}</b></div>
-      <div class="sub">${b.clearance ? "CLEARANCE • " : ""}${escapeHtml(
-        b.price_text || ""
-      )} ${b.deal_text ? "• " + escapeHtml(b.deal_text) : ""}</div>
+      <div class="sub">${b.clearance ? "CLEARANCE • " : ""}${escapeHtml(b.price_text || "")}${b.deal_text ? " • " + escapeHtml(b.deal_text) : ""}</div>
       <div class="sub">id: ${escapeHtml(b.id)}</div>
     `;
     div.onclick = () => selectBrand(b.id);
@@ -302,25 +280,24 @@ function renderBrandList() {
 
 function selectBrand(brandId) {
   activeBrandId = brandId;
-
   const b = brands.find((x) => x.id === brandId);
   if (!b) return;
 
-  el("brandHeading") && (el("brandHeading").textContent = `Editing: ${b.name}`);
+  el("brandHeading").textContent = `Editing: ${b.name}`;
   el("brandEditor")?.classList.remove("hidden");
   el("saveBrandBtn")?.classList.remove("hidden");
   el("deleteBrandBtn")?.classList.remove("hidden");
 
-  el("b_id") && (el("b_id").value = b.id || "");
-  el("b_name") && (el("b_name").value = b.name || "");
-  el("b_puffs") && (el("b_puffs").value = b.puffs || "");
-  el("b_price_text") && (el("b_price_text").value = b.price_text || "");
-  el("b_deal_text") && (el("b_deal_text").value = b.deal_text || "");
-  el("b_card_image") && (el("b_card_image").value = b.card_image || "");
-  el("b_file_path") && (el("b_file_path").value = b.file_path || "");
-  el("b_clearance") && (el("b_clearance").checked = !!b.clearance);
-  el("b_sort_price") && (el("b_sort_price").value = b.sort_price ?? "");
-  el("b_sort_order") && (el("b_sort_order").value = b.sort_order ?? "");
+  el("b_id").value = b.id || "";
+  el("b_name").value = b.name || "";
+  el("b_puffs").value = b.puffs || "";
+  el("b_price_text").value = b.price_text || "";
+  el("b_deal_text").value = b.deal_text || "";
+  el("b_card_image").value = b.card_image || "";
+  el("b_file_path").value = b.file_path || "";
+  el("b_clearance").checked = !!b.clearance;
+  el("b_sort_price").value = (b.sort_price ?? "");
+  el("b_sort_order").value = (b.sort_order ?? "");
 
   renderFlavorList();
   renderBrandList();
@@ -329,7 +306,8 @@ function selectBrand(brandId) {
 /* ------------------------
    CRUD: Brands
 -------------------------*/
-async function createBrand() {
+async function createBrand(e) {
+  if (e?.preventDefault) e.preventDefault();
   showMsg("adminMsg", "");
 
   const name = prompt("Brand name?");
@@ -360,46 +338,38 @@ async function createBrand() {
   selectBrand(id);
 }
 
-async function saveBrand() {
+async function saveBrand(e) {
+  if (e?.preventDefault) e.preventDefault();
   showMsg("adminMsg", "");
   if (!activeBrandId) return;
 
   const oldId = activeBrandId;
-  const newId = el("b_id")?.value?.trim() || "";
+  const newId = el("b_id").value.trim();
   if (!newId) return showMsg("adminMsg", "Brand ID cannot be empty.");
-
-  if (newId !== oldId && brands.some((b) => b.id === newId)) {
-    return showMsg("adminMsg", "Brand ID already exists. Choose another.");
-  }
+  if (newId !== oldId && brands.some((b) => b.id === newId)) return showMsg("adminMsg", "Brand ID already exists.");
 
   const payload = {
     id: newId,
-    name: el("b_name")?.value?.trim() || "",
-    puffs: el("b_puffs")?.value?.trim() || "",
-    price_text: el("b_price_text")?.value?.trim() || "",
-    deal_text: el("b_deal_text")?.value?.trim() || "",
-    card_image: el("b_card_image")?.value?.trim() || "",
-    file_path: el("b_file_path")?.value?.trim() || "",
-    clearance: !!el("b_clearance")?.checked,
-    sort_price:
-      (el("b_sort_price")?.value ?? "") === "" ? null : Number(el("b_sort_price").value),
-    sort_order:
-      (el("b_sort_order")?.value ?? "") === "" ? null : Number(el("b_sort_order").value),
+    name: el("b_name").value.trim(),
+    puffs: el("b_puffs").value.trim(),
+    price_text: el("b_price_text").value.trim(),
+    deal_text: el("b_deal_text").value.trim(),
+    card_image: el("b_card_image").value.trim(),
+    file_path: el("b_file_path").value.trim(),
+    clearance: el("b_clearance").checked,
+    sort_price: el("b_sort_price").value === "" ? null : Number(el("b_sort_price").value),
+    sort_order: el("b_sort_order").value === "" ? null : Number(el("b_sort_order").value),
   };
 
-  // If changing brand ID, update child flavors then rewrite brand row
   if (newId !== oldId) {
-    const { error: fErr } = await supabase
-      .from("flavors")
-      .update({ brand_id: newId })
-      .eq("brand_id", oldId);
+    const { error: fErr } = await supabase.from("flavors").update({ brand_id: newId }).eq("brand_id", oldId);
     if (fErr) return showMsg("adminMsg", `Update flavors brand_id failed: ${fErr.message}`);
 
-    const { error: delErr } = await supabase.from("brands").delete().eq("id", oldId);
-    if (delErr) return showMsg("adminMsg", `Remove old brand failed: ${delErr.message}`);
+    const { error: bErr } = await supabase.from("brands").delete().eq("id", oldId);
+    if (bErr) return showMsg("adminMsg", `Remove old brand failed: ${bErr.message}`);
 
-    const { error: insErr } = await supabase.from("brands").insert(payload);
-    if (insErr) return showMsg("adminMsg", `Insert new brand failed: ${insErr.message}`);
+    const { error: iErr } = await supabase.from("brands").insert(payload);
+    if (iErr) return showMsg("adminMsg", `Insert new brand failed: ${iErr.message}`);
   } else {
     const { error } = await supabase.from("brands").update(payload).eq("id", oldId);
     if (error) return showMsg("adminMsg", `Save failed: ${error.message}`);
@@ -410,7 +380,8 @@ async function saveBrand() {
   showMsg("adminMsg", "Saved.");
 }
 
-async function deleteBrand() {
+async function deleteBrand(e) {
+  if (e?.preventDefault) e.preventDefault();
   showMsg("adminMsg", "");
   if (!activeBrandId) return;
 
@@ -420,9 +391,8 @@ async function deleteBrand() {
   const ok = confirm(`Delete brand "${b.name}" AND all its flavors?`);
   if (!ok) return;
 
-  // Delete flavors first (if you don't have ON DELETE CASCADE in DB)
-  const { error: fErr } = await supabase.from("flavors").delete().eq("brand_id", activeBrandId);
-  if (fErr) return showMsg("adminMsg", `Delete flavors failed: ${fErr.message}`);
+  // delete flavors first (if you have FK constraints)
+  await supabase.from("flavors").delete().eq("brand_id", activeBrandId);
 
   const { error } = await supabase.from("brands").delete().eq("id", activeBrandId);
   if (error) return showMsg("adminMsg", `Delete failed: ${error.message}`);
@@ -431,7 +401,7 @@ async function deleteBrand() {
   el("brandEditor")?.classList.add("hidden");
   el("saveBrandBtn")?.classList.add("hidden");
   el("deleteBrandBtn")?.classList.add("hidden");
-  el("brandHeading") && (el("brandHeading").textContent = "Select a brand");
+  el("brandHeading").textContent = "Select a brand";
 
   await loadAll();
 }
@@ -440,7 +410,7 @@ async function deleteBrand() {
    UI + CRUD: Flavors
 -------------------------*/
 function tagCheckbox(tag, id, tags) {
-  const on = (tags || []).includes(tag) ? "checked" : "";
+  const on = tags.includes(tag) ? "checked" : "";
   const label = tag.toUpperCase();
   return `
     <label class="rowLeft">
@@ -467,7 +437,7 @@ function renderFlavorList() {
         <div><b>${escapeHtml(f.flavor)}</b></div>
         <div class="row">
           <span class="badge">${f.sold_out ? "SOLD OUT" : "IN STOCK"}</span>
-          <button class="btn small danger" data-del="${f.id}">Delete</button>
+          <button class="btn small danger" data-del="${f.id}" type="button">Delete</button>
         </div>
       </div>
 
@@ -495,7 +465,7 @@ function renderFlavorList() {
     wrap.appendChild(row);
   }
 
-  // delete flavor
+  // delete
   wrap.querySelectorAll("button[data-del]").forEach((btn) => {
     btn.onclick = async () => {
       const id = btn.getAttribute("data-del");
@@ -510,7 +480,7 @@ function renderFlavorList() {
     };
   });
 
-  // auto-save on change
+  // field updates
   wrap.querySelectorAll("input[data-f]").forEach((inp) => {
     inp.onchange = async () => {
       const fid = inp.getAttribute("data-id");
@@ -518,4 +488,122 @@ function renderFlavorList() {
 
       let value;
       if (inp.type === "checkbox") value = inp.checked;
-      else if (inp.type === "number") value = inp.value === "" ? null : Number(inp
+      else if (inp.type === "number") value = inp.value === "" ? null : Number(inp.value);
+      else value = inp.value;
+
+      const patch = {};
+      patch[field] = value;
+
+      const { error } = await supabase.from("flavors").update(patch).eq("id", fid);
+      if (error) return showMsg("adminMsg", `Update flavor failed: ${error.message}`);
+
+      showMsg("adminMsg", "Saved.");
+      await loadAll();
+      selectBrand(activeBrandId);
+    };
+  });
+
+  // tags
+  wrap.querySelectorAll("input[data-tag]").forEach((cb) => {
+    cb.onchange = async () => {
+      const fid = cb.getAttribute("data-id");
+      const tag = cb.getAttribute("data-tag");
+      const checked = cb.checked;
+
+      const current = (flavorsByBrand.get(activeBrandId) || []).find((x) => x.id === fid);
+      const tags = new Set(Array.isArray(current?.tags) ? current.tags : []);
+
+      if (checked) tags.add(tag);
+      else tags.delete(tag);
+
+      const { error } = await supabase.from("flavors").update({ tags: Array.from(tags) }).eq("id", fid);
+      if (error) return showMsg("adminMsg", `Update tags failed: ${error.message}`);
+
+      showMsg("adminMsg", "Saved.");
+      await loadAll();
+      selectBrand(activeBrandId);
+    };
+  });
+}
+
+async function addFlavor(e) {
+  if (e?.preventDefault) e.preventDefault();
+  showMsg("adminMsg", "");
+  if (!activeBrandId) return;
+
+  const flavor = prompt("Flavor name?");
+  if (!flavor) return;
+
+  const payload = {
+    brand_id: activeBrandId,
+    flavor: flavor.trim(),
+    price: null,
+    image: "",
+    tags: [],
+    sold_out: false,
+    sort_order: null,
+  };
+
+  const { error } = await supabase.from("flavors").insert(payload);
+  if (error) return showMsg("adminMsg", `Add flavor failed: ${error.message}`);
+
+  await loadAll();
+  selectBrand(activeBrandId);
+}
+
+/* ------------------------
+   AUTH STATE CHANGES
+-------------------------*/
+supabase.auth.onAuthStateChange(async (event) => {
+  console.log("[auth] event:", event);
+
+  if (event === "PASSWORD_RECOVERY") {
+    el("recoveryBox")?.classList.remove("hidden");
+    el("authView")?.classList.remove("hidden");
+    el("adminView")?.classList.add("hidden");
+    el("logoutBtn")?.classList.add("hidden");
+    showMsg("authMsg", "Enter a new password below to finish resetting.");
+    return;
+  }
+
+  await refreshAuthUI();
+});
+
+/* ------------------------
+   WIRE UP EVENTS (DOM READY)
+-------------------------*/
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("[init] admin.js loaded");
+
+  // IMPORTANT: if your buttons are in a <form>, prevent default submit refresh
+  const authForm = el("authForm");
+  if (authForm) {
+    authForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      login(e);
+    });
+  }
+
+  // Buttons
+  el("loginBtn")?.addEventListener("click", login);
+  el("forgotBtn")?.addEventListener("click", forgotPassword);
+  el("setPasswordBtn")?.addEventListener("click", setNewPassword);
+  el("logoutBtn")?.addEventListener("click", logout);
+
+  el("brandSearch")?.addEventListener("input", renderBrandList);
+  el("newBrandBtn")?.addEventListener("click", createBrand);
+  el("saveBrandBtn")?.addEventListener("click", saveBrand);
+  el("deleteBrandBtn")?.addEventListener("click", deleteBrand);
+  el("addFlavorBtn")?.addEventListener("click", addFlavor);
+
+  // Backup: expose globals if HTML uses onclick="..."
+  window.login = login;
+  window.forgotPassword = forgotPassword;
+  window.setNewPassword = setNewPassword;
+
+  // Handle PKCE code links (recovery)
+  await ensureSessionFromUrlIfNeeded();
+
+  // Init UI
+  await refreshAuthUI();
+});
