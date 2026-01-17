@@ -32,8 +32,13 @@ async function loadBrandsIndex() {
   const res = await fetch("./data/brands.json", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load data/brands.json");
   const data = await res.json();
-  if (!Array.isArray(data)) throw new Error("brands.json must be an array []");
-  BRANDS = data;
+const list = Array.isArray(data) ? data : data?.brands;
+
+if (!Array.isArray(list)) {
+  throw new Error("brands.json must be an array [] or an object { brands: [] }");
+}
+BRANDS = list;
+
 }
 
 async function loadBrandFile(brandId) {
