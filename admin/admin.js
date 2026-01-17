@@ -1,10 +1,9 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 /**
- * IMPORTANT:
- * Put your real values here.
- * - Supabase URL: Settings → API → Project URL
- * - Anon key: Settings → API Keys → Publishable key
+ * Supabase:
+ * - Project URL: Supabase Project Settings -> API -> Project URL
+ * - Publishable key (anon): Settings -> API Keys -> Publishable key
  */
 const SUPABASE_URL = "https://aldvugeyjwjtwcwgcfij.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_3l-ZjBLZVB5r3bBhfvk23A_dwEVenDy";
@@ -12,21 +11,25 @@ const SUPABASE_ANON_KEY = "sb_publishable_3l-ZjBLZVB5r3bBhfvk23A_dwEVenDy";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const el = (id) => document.getElementById(id);
-const showMsg = (id, msg) => { el(id).textContent = msg || ""; };
+const showMsg = (id, msg) => { if (el(id)) el(id).textContent = msg || ""; };
 
 let brands = [];
 let activeBrandId = null;
 let flavorsByBrand = new Map();
 
+// Force the "Set New Password" UI when user arrives from recovery email
+let FORCE_PASSWORD_RESET = false;
+
+/* -----------------------------------------
+   SORT: Clearance first, then cheapest, etc.
+------------------------------------------ */
 function homeOrderKey(b) {
-  // Clearance first, then sort_price low->high, then sort_order, then name
   const clearance = b.clearance ? 0 : 1;
   const sortPrice = (b.sort_price ?? 999999);
   const sortOrder = (b.sort_order ?? 999999);
   const name = (b.name || "").toLowerCase();
   return [clearance, sortPrice, sortOrder, name];
 }
-
 function compareKeys(a, b) {
   for (let i = 0; i < a.length; i++) {
     if (a[i] < b[i]) return -1;
@@ -43,61 +46,92 @@ function slugify(s) {
     .replace(/(^-|-$)+/g, "");
 }
 
-async function refreshAuthUI() {
-  const recovery = isRecoveryVisit();
+/* -----------------------------------------
+   RECOVERY DETECTION (GitHub Pages safe)
+   Supabase recovery links often look like:
+   /admin/#type=recovery&access_token=...
+   or /admin/?code=...#type=recovery
+------------------------------------------ */
+function looksLikeRecoveryUrl() {
+  const hash = window.location.hash || "";
+  const qs = window.location.search || "";
+  return hash.includes("type=recovery") || qs.includes("type=recovery") || hash.includes("recovery");
+}
 
-  // If this is a recovery visit, ALWAYS show auth view + recovery box,
+/**
+ * This is the KEY FIX:
+ * Parse the recovery tokens from the URL BEFORE rendering.
+ * On GitHub Pages, relying only on PASSWORD_RECOVERY event is unreliable.
+ */
+async function handleRecoveryIfPresent() {
+  try {
+    // If URL contains Supabase auth params, this will parse & store a session
+    const { data, error } = await supabase.auth.getSessionFromUrl({ storeSession: true });
+
+    // If there's a session and URL resembles recovery, force password UI
+    if (!error && data?.session && looksLikeRecoveryUrl()) {
+      FORCE_PASSWORD_RESET = true;
+    }
+  } catch (e) {
+    // ignore; UI will fall back to normal auth state
+    console.warn("handleRecoveryIfPresent error:", e);
+  }
+}
+
+/* -----------------------------------------
+   AUTH UI (single source of truth)
+------------------------------------------ */
+async function refreshAuthUI() {
+  // If this is a password recovery visit, ALWAYS show recovery box,
   // even if a session exists (Supabase creates a temporary session).
-  if (recovery) {
-    el("recoveryBox").classList.remove("hidden");
-    el("authView").classList.remove("hidden");
-    el("adminView").classList.add("hidden");
-    el("logoutBtn").classList.add("hidden");
-    showMsg("authMsg", "Enter a new password below to finish resetting.");
+  if (FORCE_PASSWORD_RESET) {
+    el("recoveryBox")?.classList.remove("hidden");
+    el("authView")?.classList.remove("hidden");
+    el("adminView")?.classList.add("hidden");
+    el("logoutBtn")?.classList.add("hidden");
+    showMsg("authMsg", "Set a new password below to finish resetting.");
     return;
   }
 
   const { data: { session } } = await supabase.auth.getSession();
 
   const loggedIn = !!session?.user;
-  el("authView").classList.toggle("hidden", loggedIn);
-  el("adminView").classList.toggle("hidden", !loggedIn);
-  el("logoutBtn").classList.toggle("hidden", !loggedIn);
 
-  el("userEmail").textContent = session?.user?.email || "";
+  el("authView")?.classList.toggle("hidden", loggedIn);
+  el("adminView")?.classList.toggle("hidden", !loggedIn);
+  el("logoutBtn")?.classList.toggle("hidden", !loggedIn);
+
+  if (el("userEmail")) el("userEmail").textContent = session?.user?.email || "";
 
   if (loggedIn) {
     await loadAll();
   }
 }
 
-
 /* ------------------------
-   AUTH (login / forgot / recovery)
+   AUTH (login / forgot / set password)
 -------------------------*/
 async function login() {
   showMsg("authMsg", "");
-  const email = el("email").value.trim();
-  const password = el("password").value;
+  const email = el("email")?.value.trim();
+  const password = el("password")?.value;
 
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return showMsg("authMsg", `Login failed: ${error.message}`);
+
   await refreshAuthUI();
 }
 
 async function forgotPassword() {
   showMsg("authMsg", "");
 
-  const email = el("email").value.trim();
+  const email = el("email")?.value.trim();
   if (!email) return showMsg("authMsg", "Enter your email first.");
 
-  // GitHub Pages is safer with an explicit file
+  // GitHub Pages safest: explicit file
   const redirectTo = `${location.origin}/menu/admin/index.html`;
 
-  const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo,
-  });
-
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
   if (error) return showMsg("authMsg", `Reset failed: ${error.message}`);
 
   showMsg("authMsg", "Password reset email sent. Check inbox/spam.");
@@ -105,42 +139,38 @@ async function forgotPassword() {
 
 async function setNewPassword() {
   showMsg("authMsg", "");
-  const newPassword = el("newPassword").value;
-  if (!newPassword || newPassword.length < 6) return showMsg("authMsg", "Use at least 6 characters.");
+  const newPassword = el("newPassword")?.value;
+
+  if (!newPassword || newPassword.length < 6) {
+    return showMsg("authMsg", "Use at least 6 characters.");
+  }
 
   const { error } = await supabase.auth.updateUser({ password: newPassword });
   if (error) return showMsg("authMsg", `Update failed: ${error.message}`);
 
-  // Clear recovery URL so refresh doesn't re-trigger recovery mode
+  // Clear recovery URL + stop forcing recovery UI
+  FORCE_PASSWORD_RESET = false;
+
+  // Remove hash/query so page won't stay in recovery mode on refresh
   history.replaceState(null, "", window.location.pathname);
 
-  el("recoveryBox").classList.add("hidden");
-  showMsg("authMsg", "Password updated. Now you can login with the new password.");
+  el("recoveryBox")?.classList.add("hidden");
+  showMsg("authMsg", "Password updated. Please login with your new password.");
 
-  // Optionally sign out so user does a clean login:
+  // Sign out to force clean login with the new password
   await supabase.auth.signOut();
+  await refreshAuthUI();
 }
 
-/* When user clicks recovery email, Supabase sets session state to PASSWORD_RECOVERY */
-supabase.auth.onAuthStateChange(async (event, session) => {
-  // If user came via recovery link, force password UI
+/* ------------------------
+   Auth state changes
+-------------------------*/
+supabase.auth.onAuthStateChange(async (event) => {
+  // If Supabase explicitly says it's recovery, force password UI
   if (event === "PASSWORD_RECOVERY") {
-    el("recoveryBox").classList.remove("hidden");
-    el("authView").classList.remove("hidden");
-    el("adminView").classList.add("hidden");
-    el("logoutBtn").classList.add("hidden");
-    showMsg("authMsg", "Enter a new password below to finish resetting.");
-    return;
+    FORCE_PASSWORD_RESET = true;
   }
-
-  // Normal signed in / refresh
-  if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED" || event === "INITIAL_SESSION") {
-    await refreshAuthUI();
-  }
-
-  if (event === "SIGNED_OUT") {
-    await refreshAuthUI();
-  }
+  await refreshAuthUI();
 });
 
 /* ------------------------
@@ -169,9 +199,12 @@ async function loadAll() {
       flavorsByBrand.set(f.brand_id, arr);
     }
 
-    // stable per-brand order
     for (const [bid, arr] of flavorsByBrand.entries()) {
-      arr.sort((a, b) => (a.sort_order ?? 999999) - (b.sort_order ?? 999999) || (a.flavor || "").localeCompare(b.flavor || ""));
+      arr.sort(
+        (a, b) =>
+          (a.sort_order ?? 999999) - (b.sort_order ?? 999999) ||
+          (a.flavor || "").localeCompare(b.flavor || "")
+      );
       flavorsByBrand.set(bid, arr);
     }
   }
@@ -184,9 +217,11 @@ async function loadAll() {
    UI: Brand list
 -------------------------*/
 function renderBrandList() {
-  const q = (el("brandSearch").value || "").trim().toLowerCase();
+  const q = (el("brandSearch")?.value || "").trim().toLowerCase();
 
   const list = el("brandList");
+  if (!list) return;
+
   list.innerHTML = "";
 
   const filtered = brands.filter((b) =>
@@ -213,11 +248,10 @@ function selectBrand(brandId) {
   if (!b) return;
 
   el("brandHeading").textContent = `Editing: ${b.name}`;
-  el("brandEditor").classList.remove("hidden");
-  el("saveBrandBtn").classList.remove("hidden");
-  el("deleteBrandBtn").classList.remove("hidden");
+  el("brandEditor")?.classList.remove("hidden");
+  el("saveBrandBtn")?.classList.remove("hidden");
+  el("deleteBrandBtn")?.classList.remove("hidden");
 
-  // fill brand fields
   el("b_id").value = b.id || "";
   el("b_name").value = b.name || "";
   el("b_puffs").value = b.puffs || "";
@@ -229,7 +263,6 @@ function selectBrand(brandId) {
   el("b_sort_price").value = (b.sort_price ?? "");
   el("b_sort_order").value = (b.sort_order ?? "");
 
-  // flavors
   renderFlavorList();
   renderBrandList();
 }
@@ -246,7 +279,6 @@ async function createBrand() {
   const id = prompt("Brand ID (slug)? Leave empty to auto-generate:", slugify(name)) || slugify(name);
   if (!id) return;
 
-  // prevent duplicate
   if (brands.some((b) => b.id === id)) return showMsg("adminMsg", "That brand ID already exists.");
 
   const payload = {
@@ -271,7 +303,6 @@ async function createBrand() {
 
 async function saveBrand() {
   showMsg("adminMsg", "");
-
   if (!activeBrandId) return;
 
   const oldId = activeBrandId;
@@ -295,7 +326,6 @@ async function saveBrand() {
     sort_order: el("b_sort_order").value === "" ? null : Number(el("b_sort_order").value)
   };
 
-  // If changing brand ID, we must update child flavors first
   if (newId !== oldId) {
     const { error: fErr } = await supabase
       .from("flavors")
@@ -332,9 +362,9 @@ async function deleteBrand() {
   if (error) return showMsg("adminMsg", `Delete failed: ${error.message}`);
 
   activeBrandId = null;
-  el("brandEditor").classList.add("hidden");
-  el("saveBrandBtn").classList.add("hidden");
-  el("deleteBrandBtn").classList.add("hidden");
+  el("brandEditor")?.classList.add("hidden");
+  el("saveBrandBtn")?.classList.add("hidden");
+  el("deleteBrandBtn")?.classList.add("hidden");
   el("brandHeading").textContent = "Select a brand";
 
   await loadAll();
@@ -345,8 +375,9 @@ async function deleteBrand() {
 -------------------------*/
 function renderFlavorList() {
   const wrap = el("flavorList");
-  wrap.innerHTML = "";
+  if (!wrap) return;
 
+  wrap.innerHTML = "";
   const arr = flavorsByBrand.get(activeBrandId) || [];
 
   for (const f of arr) {
@@ -387,7 +418,7 @@ function renderFlavorList() {
     wrap.appendChild(row);
   }
 
-  // delete handlers
+  // delete
   wrap.querySelectorAll("button[data-del]").forEach((btn) => {
     btn.onclick = async () => {
       const id = btn.getAttribute("data-del");
@@ -400,7 +431,7 @@ function renderFlavorList() {
     };
   });
 
-  // field updates (auto-save on change)
+  // auto-save fields
   wrap.querySelectorAll("input[data-f]").forEach((inp) => {
     inp.onchange = async () => {
       const fid = inp.getAttribute("data-id");
@@ -410,9 +441,6 @@ function renderFlavorList() {
       if (inp.type === "checkbox") value = inp.checked;
       else if (inp.type === "number") value = inp.value === "" ? null : Number(inp.value);
       else value = inp.value;
-
-      // tags handled separately
-      if (field === "tags") return;
 
       const patch = {};
       patch[field === "sold_out" ? "sold_out" : field] = value;
@@ -426,7 +454,7 @@ function renderFlavorList() {
     };
   });
 
-  // tag handlers
+  // tags
   wrap.querySelectorAll("input[data-tag]").forEach((cb) => {
     cb.onchange = async () => {
       const fid = cb.getAttribute("data-id");
@@ -502,6 +530,8 @@ el("setPasswordBtn").onclick = setNewPassword;
 
 el("logoutBtn").onclick = async () => {
   await supabase.auth.signOut();
+  FORCE_PASSWORD_RESET = false;
+  history.replaceState(null, "", window.location.pathname);
   await refreshAuthUI();
 };
 
@@ -511,21 +541,12 @@ el("saveBrandBtn").onclick = saveBrand;
 el("deleteBrandBtn").onclick = deleteBrand;
 el("addFlavorBtn").onclick = addFlavor;
 
-// Init
-refreshAuthUI().catch((e) => showMsg("authMsg", String(e)));
-
-function isRecoveryVisit() {
-  const hash = window.location.hash || "";
-  const qs = window.location.search || "";
-  const params = new URLSearchParams(qs);
-
-  // Supabase can send either:
-  // 1) hash with type=recovery
-  // 2) query with type=recovery
-  // 3) query with code (PKCE) + type=recovery in hash
-  return (
-    hash.includes("type=recovery") ||
-    params.get("type") === "recovery" ||
-    hash.includes("recovery_token") // older style
-  );
-}
+/* ------------------------
+   INIT (IMPORTANT ORDER)
+   1) Parse recovery token from URL first
+   2) Then render UI
+-------------------------*/
+(async function init() {
+  await handleRecoveryIfPresent();
+  await refreshAuthUI();
+})();
