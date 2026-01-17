@@ -31,15 +31,19 @@ let ALL_FLAVORS = [];    // global search index (built from all brand files)
 async function loadBrandsIndex() {
   const res = await fetch("./data/brands.json", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load data/brands.json");
+
   const data = await res.json();
-const list = Array.isArray(data) ? data : data?.brands;
 
-if (!Array.isArray(list)) {
-  throw new Error("brands.json must be an array [] or an object { brands: [] }");
-}
-BRANDS = list;
+  // ✅ support both old array format and new wrapper format
+  const list = Array.isArray(data) ? data : data?.brands;
 
+  if (!Array.isArray(list)) {
+    throw new Error("brands.json must be an array [] or an object { brands: [] }");
+  }
+
+  BRANDS = list;
 }
+
 
 async function loadBrandFile(brandId) {
   const b = BRANDS.find((x) => x.id === brandId);
