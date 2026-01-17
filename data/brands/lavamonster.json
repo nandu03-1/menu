@@ -13,12 +13,18 @@
       "tags": [],
       "soldOut": false
     },
-       {
+    {
       "flavor": "Clear Ice",
       "price": 25,
       "image": "images/lavamonster/lm.jpg",
       "tags": [],
       "soldOut": false
+    },
+    {
+      "soldOut": true,
+      "flavor": "Blue Razz Ice",
+      "image": "https://hotpuff.com/media/catalog/product/cache/75df9e7332fa295420d7fc4d618e2e69/l/a/lava_monster_blueberry_raspberry.png",
+      "price": 25
     }
   ]
 }
