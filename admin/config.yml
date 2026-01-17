@@ -8,6 +8,9 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  # ==============================
+  # HOME PAGE CARDS (brands.json)
+  # ==============================
   - name: "home_cards"
     label: "Home Page Cards"
     delete: false
@@ -15,12 +18,12 @@ collections:
       preview: false
     files:
       - name: "brands"
-        label: "Brands list (brands.json)"
+        label: "Brands list (Home cards)"
         file: "data/brands.json"
         format: "json"
         fields:
           - label: "Brands"
-            name: ""
+            name: "brands"
             widget: "list"
             summary: "{{fields.name}}"
             fields:
@@ -31,9 +34,14 @@ collections:
               - { label: "Deal Text", name: "dealText", widget: "string", required: false }
               - { label: "Card Image", name: "cardImage", widget: "image", required: false }
               - { label: "Brand File Path", name: "file", widget: "string" }
-              - { label: "Clearance", name: "clearance", widget: "boolean", required: false, default: false }
-              - { label: "Sort Price", name: "sortPrice", widget: "number", required: false, value_type: "float" }
 
+              # 🔥 Sorting controls (NO CODE EDITS LATER)
+              - { label: "Clearance", name: "clearance", widget: "boolean", default: false }
+              - { label: "Sort Price", name: "sortPrice", widget: "number", value_type: "float", required: false }
+
+  # ==================================
+  # BRAND MENUS (data/brands/*.json)
+  # ==================================
   - name: "brand_files"
     label: "Brand Menus (Flavors)"
     folder: "data/brands"
@@ -44,6 +52,7 @@ collections:
       preview: false
     summary: "{{filename}} — {{brand.name}}"
     identifier_field: "brand.name"
+
     fields:
       - label: "Brand"
         name: "brand"
@@ -60,8 +69,9 @@ collections:
         summary: "{{fields.flavor}}"
         fields:
           - { label: "Flavor", name: "flavor", widget: "string" }
-          - { label: "Price", name: "price", widget: "number", required: false, value_type: "float" }
+          - { label: "Price", name: "price", widget: "number", value_type: "float", required: false }
           - { label: "Image", name: "image", widget: "image", required: false }
+
           - label: "Tags"
             name: "tags"
             widget: "select"
@@ -70,4 +80,5 @@ collections:
             options:
               - { label: "NEW", value: "new" }
               - { label: "TRENDING", value: "trending" }
-          - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
+
+          - { label: "Sold Out", name: "soldOut", widget: "boolean", default: false }
