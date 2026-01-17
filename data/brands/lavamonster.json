@@ -23,7 +23,7 @@
     {
       "soldOut": false,
       "flavor": "Blue Razz Ice",
-      "image": "/images/uploads/lava_monster_blueberry_raspberry.png",
+      "image": "images/uploads/lava_monster_blueberry_raspberry.png",
       "price": 25
     }
   ]
