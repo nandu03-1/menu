@@ -1,0 +1,16 @@
+{
+  "flavors": [
+    {
+      "soldOut": false,
+      "flavor": "blue razz",
+      "price": 25,
+      "image": "https://www.lucky8vapes.com/cdn/shop/files/vape-pods-vuse-epod-blue-raspberry-2pk-vape-pods-vuse-epod-18mg-20mg-balanced-vancouver-canada-bc_750x750.jpg?v=1747359803",
+      "tags": [
+        "new"
+      ]
+    }
+  ],
+  "brand": {
+    "name": "vuse"
+  }
+}
