@@ -8,9 +8,6 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # -----------------------------
-  # HOME PAGE CARDS (brands.json)
-  # -----------------------------
   - name: "home_cards"
     label: "Home Page Cards"
     delete: false
@@ -22,7 +19,6 @@ collections:
         file: "data/brands.json"
         format: "json"
         fields:
-          # Your brands.json is a top-level array, so name is "" (empty string).
           - label: "Brands"
             name: ""
             widget: "list"
@@ -35,39 +31,43 @@ collections:
               - { label: "Deal Text", name: "dealText", widget: "string", required: false }
               - { label: "Card Image", name: "cardImage", widget: "image", required: false }
               - { label: "Brand File Path", name: "file", widget: "string" }
-
-              # Optional but recommended for reliable sorting
               - { label: "Clearance", name: "clearance", widget: "boolean", required: false, default: false }
               - { label: "Sort Price", name: "sortPrice", widget: "number", required: false, value_type: "float" }
 
-  # ---------------------------------------
-  # BRAND FILES (data/brands/*.json)
-  # ---------------------------------------
   - name: "brand_files"
+    label: "Brand Menus (Flavors)"
+    folder: "data/brands"
+    create: false
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    summary: "{{filename}} — {{brand.name}}"
+    identifier_field: "brand.name"
     fields:
-  - label: "Brand"
-    name: "brand"
-    widget: "object"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Puffs", name: "puffs", widget: "string", required: false }
-      - { label: "Price Text", name: "priceText", widget: "string", required: false }
-      - { label: "Deal Text", name: "dealText", widget: "string", required: false }
+      - label: "Brand"
+        name: "brand"
+        widget: "object"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Puffs", name: "puffs", widget: "string", required: false }
+          - { label: "Price Text", name: "priceText", widget: "string", required: false }
+          - { label: "Deal Text", name: "dealText", widget: "string", required: false }
 
-  - label: "Flavors"
-    name: "flavors"
-    widget: "list"
-    summary: "{{fields.flavor}}"
-    fields:
-      - { label: "Flavor", name: "flavor", widget: "string" }
-      - { label: "Price", name: "price", widget: "number", required: false, value_type: "float" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - label: "Tags"
-        name: "tags"
-        widget: "select"
-        multiple: true
-        required: false
-        options:
-          - { label: "NEW", value: "new" }
-          - { label: "TRENDING", value: "trending" }
-      - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
+      - label: "Flavors"
+        name: "flavors"
+        widget: "list"
+        summary: "{{fields.flavor}}"
+        fields:
+          - { label: "Flavor", name: "flavor", widget: "string" }
+          - { label: "Price", name: "price", widget: "number", required: false, value_type: "float" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Tags"
+            name: "tags"
+            widget: "select"
+            multiple: true
+            required: false
+            options:
+              - { label: "NEW", value: "new" }
+              - { label: "TRENDING", value: "trending" }
+          - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
