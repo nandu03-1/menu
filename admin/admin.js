@@ -98,14 +98,23 @@ async function setNewPassword() {
 }
 
 /* When user clicks recovery email, Supabase sets session state to PASSWORD_RECOVERY */
-supabase.auth.onAuthStateChange(async (event) => {
+supabase.auth.onAuthStateChange(async (event, session) => {
+  // If user came via recovery link, force password UI
   if (event === "PASSWORD_RECOVERY") {
     el("recoveryBox").classList.remove("hidden");
     el("authView").classList.remove("hidden");
     el("adminView").classList.add("hidden");
-    showMsg("authMsg", "Enter a new password below.");
+    el("logoutBtn").classList.add("hidden");
+    showMsg("authMsg", "Enter a new password below to finish resetting.");
+    return;
   }
-  if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
+
+  // Normal signed in / refresh
+  if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED" || event === "INITIAL_SESSION") {
+    await refreshAuthUI();
+  }
+
+  if (event === "SIGNED_OUT") {
     await refreshAuthUI();
   }
 });
