@@ -8,10 +8,10 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # ---------------------------------------
-  # HOME PAGE CARDS (edits data/brands.json)
-  # ---------------------------------------
-  - name: "brands_index"
+  # -----------------------------
+  # HOME PAGE CARDS (brands.json)
+  # -----------------------------
+  - name: "home_cards"
     label: "Home Page Cards"
     delete: false
     editor:
@@ -22,7 +22,7 @@ collections:
         file: "data/brands.json"
         format: "json"
         fields:
-          # IMPORTANT: your brands.json is a top-level array, so name is "".
+          # Your brands.json is a top-level array, so name is "" (empty string).
           - label: "Brands"
             name: ""
             widget: "list"
@@ -32,18 +32,18 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Puffs", name: "puffs", widget: "string", required: false }
               - { label: "Price Text", name: "priceText", widget: "string", required: false }
-              - { label: "Deal Text (ex: CLEARANCE / 2 for $..)", name: "dealText", widget: "string", required: false }
+              - { label: "Deal Text", name: "dealText", widget: "string", required: false }
               - { label: "Card Image", name: "cardImage", widget: "image", required: false }
               - { label: "Brand File Path", name: "file", widget: "string" }
 
-              # Optional (recommended for reliable sorting later)
+              # Optional but recommended for reliable sorting
               - { label: "Clearance", name: "clearance", widget: "boolean", required: false, default: false }
               - { label: "Sort Price", name: "sortPrice", widget: "number", required: false, value_type: "float" }
 
   # ---------------------------------------
-  # BRAND FILES (edits data/brands/*.json)
+  # BRAND FILES (data/brands/*.json)
   # ---------------------------------------
-    - name: "brand_files"
+  - name: "brand_files"
     label: "Brand Menus (Flavors)"
     folder: "data/brands"
     create: true
@@ -52,7 +52,7 @@ collections:
     editor:
       preview: false
 
-    # ✅ makes the list show something meaningful
+    # This fixes the "blank list rows" issue
     summary: "{{filename}} — {{brand.name}}"
     identifier_field: "brand.name"
 
@@ -63,26 +63,3 @@ collections:
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Puffs", name: "puffs", widget: "string", required: false }
-          - { label: "Price Text", name: "priceText", widget: "string", required: false }
-          - { label: "Deal Text", name: "dealText", widget: "string", required: false }
-
-      - label: "Flavors"
-        name: "flavors"
-        widget: "list"
-        summary: "{{fields.flavor}}"
-        fields:
-          - { label: "Flavor", name: "flavor", widget: "string" }
-          - { label: "Price", name: "price", widget: "number", required: false, value_type: "float" }
-          - { label: "Image", name: "image", widget: "image", required: false }
-
-          - label: "Tags"
-            name: "tags"
-            widget: "select"
-            multiple: true
-            required: false
-            options:
-              - { label: "NEW", value: "new" }
-              - { label: "TRENDING", value: "trending" }
-
-          - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
-
