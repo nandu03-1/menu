@@ -43,7 +43,7 @@ collections:
   # ---------------------------------------
   # BRAND FILES (edits data/brands/*.json)
   # ---------------------------------------
-  - name: "brand_files"
+    - name: "brand_files"
     label: "Brand Menus (Flavors)"
     folder: "data/brands"
     create: true
@@ -51,6 +51,11 @@ collections:
     format: "json"
     editor:
       preview: false
+
+    # ✅ makes the list show something meaningful
+    summary: "{{filename}} — {{brand.name}}"
+    identifier_field: "brand.name"
+
     fields:
       - label: "Brand"
         name: "brand"
@@ -80,3 +85,4 @@ collections:
               - { label: "TRENDING", value: "trending" }
 
           - { label: "Sold Out", name: "soldOut", widget: "boolean", required: false, default: false }
+
