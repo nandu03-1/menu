@@ -475,7 +475,7 @@ function setupAgeGate() {
 function setupShopInfo() {
   // If you removed Call/Directions + footer store info as requested,
   // you can keep only the shop name.
-  el("shopName").textContent = SHOP.name;
+  if (el("shopName")) el("shopName").textContent = SHOP.name;
 
   // These elements may be removed from HTML; guard them.
   if (el("callBtn")) el("callBtn").href = `tel:${SHOP.phone}`;
