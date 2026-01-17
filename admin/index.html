@@ -1,70 +1,123 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Stardust Admin</title>
-  <style>
-    body{font-family:system-ui,Arial;margin:24px;max-width:1100px}
-    input,button,select{padding:10px;font-size:14px}
-    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .card{border:1px solid #ddd;border-radius:10px;padding:16px;margin:14px 0}
-    table{width:100%;border-collapse:collapse}
-    th,td{border-bottom:1px solid #eee;padding:10px;text-align:left;vertical-align:top}
-    .muted{color:#666}
-    .hidden{display:none}
-    .tag{display:inline-block;padding:2px 8px;border:1px solid #ddd;border-radius:999px;margin-right:6px}
-  </style>
 
-  <!-- Supabase client -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- IMPORTANT for GitHub Pages under /menu/ -->
+  <base href="/menu/">
+
+  <title>Stardust Admin</title>
+  <link rel="stylesheet" href="admin/admin.css" />
 </head>
 <body>
-  <h1>Stardust Menu Admin</h1>
-
-  <div id="loginCard" class="card">
-    <h3>Login</h3>
-    <div class="row">
-      <input id="email" placeholder="Email" />
-      <input id="password" type="password" placeholder="Password" />
-      <button id="loginBtn">Login</button>
-      <button id="logoutBtn" class="hidden">Logout</button>
+  <header class="topbar">
+    <div class="title">Stardust Admin</div>
+    <div class="right">
+      <span id="userEmail" class="muted"></span>
+      <button id="logoutBtn" class="btn ghost hidden">Logout</button>
     </div>
-    <p id="loginMsg" class="muted"></p>
-  </div>
+  </header>
 
-  <div id="adminArea" class="hidden">
-    <div class="card">
-      <h3>Brands</h3>
+  <!-- AUTH -->
+  <main class="wrap">
+    <section id="authView" class="card">
+      <h2>Login</h2>
+      <p class="muted">Use your Supabase Email/Password account.</p>
+
+      <div class="grid2">
+        <label>
+          <span>Email</span>
+          <input id="email" type="email" placeholder="you@email.com" autocomplete="email" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+        </label>
+      </div>
+
       <div class="row">
-        <button id="refreshBtn">Refresh</button>
-        <select id="brandSelect"></select>
-        <button id="newFlavorBtn">Add Flavor</button>
+        <button id="loginBtn" class="btn">Login</button>
+        <button id="forgotBtn" class="btn ghost">Forgot password</button>
       </div>
-      <p class="muted">Tip: edit sold-out / price / tags and click “Save”.</p>
-    </div>
 
-    <div class="card">
-      <h3>Flavors</h3>
-      <div style="overflow:auto">
-        <table id="flavorsTable">
-          <thead>
-            <tr>
-              <th>Flavor</th>
-              <th>Price</th>
-              <th>Image path</th>
-              <th>Tags (comma)</th>
-              <th>Sold out</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+      <div class="hr"></div>
+
+      <!-- Password recovery UI (only appears when Supabase sends recovery state) -->
+      <div id="recoveryBox" class="hidden">
+        <h3>Set a new password</h3>
+        <label>
+          <span>New password</span>
+          <input id="newPassword" type="password" placeholder="New password" />
+        </label>
+        <div class="row">
+          <button id="setPasswordBtn" class="btn">Update password</button>
+        </div>
       </div>
-      <p class="muted">Image path example: <code>images/bc5000/mm.webp</code> (keep using your repo images for now).</p>
-    </div>
-  </div>
 
-  <script src="./admin.js"></script>
+      <p id="authMsg" class="msg"></p>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="adminView" class="admin hidden">
+      <aside class="sidebar card">
+        <div class="sidebarHeader">
+          <h3>Brands</h3>
+          <button id="newBrandBtn" class="btn small">+ Brand</button>
+        </div>
+
+        <input id="brandSearch" class="input" placeholder="Search brand..." />
+        <div id="brandList" class="list"></div>
+
+        <div class="hint">
+          <div><b>Home order:</b> Clearance first, then Sort Price (low→high), then Sort Order.</div>
+        </div>
+      </aside>
+
+      <section class="content card">
+        <div class="contentHeader">
+          <h3 id="brandHeading">Select a brand</h3>
+          <div class="row">
+            <button id="saveBrandBtn" class="btn small hidden">Save Brand</button>
+            <button id="deleteBrandBtn" class="btn small danger hidden">Delete Brand</button>
+          </div>
+        </div>
+
+        <div id="brandEditor" class="hidden">
+          <h4>Brand (Home Card + Header)</h4>
+          <div class="grid2">
+            <label><span>ID (slug)</span><input id="b_id" class="input" /></label>
+            <label><span>Name</span><input id="b_name" class="input" /></label>
+            <label><span>Puffs</span><input id="b_puffs" class="input" /></label>
+            <label><span>Price Text</span><input id="b_price_text" class="input" /></label>
+            <label><span>Deal Text</span><input id="b_deal_text" class="input" /></label>
+            <label><span>Card Image (path/url)</span><input id="b_card_image" class="input" /></label>
+            <label><span>File Path (optional)</span><input id="b_file_path" class="input" /></label>
+
+            <label class="rowLeft">
+              <input id="b_clearance" type="checkbox" />
+              <span>Clearance</span>
+            </label>
+
+            <label><span>Sort Price (number)</span><input id="b_sort_price" class="input" type="number" step="0.01" /></label>
+            <label><span>Sort Order (optional)</span><input id="b_sort_order" class="input" type="number" step="1" /></label>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="flavorsHeader">
+            <h4>Flavors</h4>
+            <button id="addFlavorBtn" class="btn small">+ Flavor</button>
+          </div>
+
+          <div id="flavorList" class="flavorList"></div>
+        </div>
+
+        <p id="adminMsg" class="msg"></p>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="admin/admin.js"></script>
 </body>
 </html>
