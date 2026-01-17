@@ -42,45 +42,44 @@ collections:
   # ==================================
   # BRAND MENUS (data/brands/*.json)
   # ==================================
- - name: "brand_files"
-  label: "Brand Menus (Flavors)"
-  folder: "data/brands"
-  create: true
-  extension: "json"
-  format: "json"
-  slug: "{{slug}}"
-  editor:
-    preview: false
-  summary: "{{filename}} — {{fields.brand.name}}"
-  identifier_field: "brand.name"
+  - name: "brand_files"
+    label: "Brand Menus (Flavors)"
+    folder: "data/brands"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    summary: "{{filename}} — {{fields.brand.name}}"
+    identifier_field: "brand.name"
 
-  fields:
-    - label: "Brand"
-      name: "brand"
-      widget: "object"
-      fields:
-        - { label: "Name", name: "name", widget: "string" }
-        - { label: "Puffs", name: "puffs", widget: "string", required: false }
-        - { label: "Price Text", name: "priceText", widget: "string", required: false }
-        - { label: "Deal Text", name: "dealText", widget: "string", required: false }
+    fields:
+      - label: "Brand"
+        name: "brand"
+        widget: "object"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Puffs", name: "puffs", widget: "string", required: false }
+          - { label: "Price Text", name: "priceText", widget: "string", required: false }
+          - { label: "Deal Text", name: "dealText", widget: "string", required: false }
 
-    - label: "Flavors"
-      name: "flavors"
-      widget: "list"
-      summary: "{{fields.flavor}}"
-      fields:
-        - { label: "Flavor", name: "flavor", widget: "string" }
-        - { label: "Price", name: "price", widget: "number", value_type: "float", required: false }
-        - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Flavors"
+        name: "flavors"
+        widget: "list"
+        summary: "{{fields.flavor}}"
+        fields:
+          - { label: "Flavor", name: "flavor", widget: "string" }
+          - { label: "Price", name: "price", widget: "number", value_type: "float", required: false }
+          - { label: "Image", name: "image", widget: "image", required: false }
 
-        - label: "Tags"
-          name: "tags"
-          widget: "select"
-          multiple: true
-          required: false
-          options:
-            - { label: "NEW", value: "new" }
-            - { label: "TRENDING", value: "trending" }
+          - label: "Tags"
+            name: "tags"
+            widget: "select"
+            multiple: true
+            required: false
+            options:
+              - { label: "NEW", value: "new" }
+              - { label: "TRENDING", value: "trending" }
 
-        - { label: "Sold Out", name: "soldOut", widget: "boolean", default: false }
-
+          - { label: "Sold Out", name: "soldOut", widget: "boolean", default: false }
