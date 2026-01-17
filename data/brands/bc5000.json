@@ -1,11 +1,11 @@
 {
   
-  "brand": [ {
+  "brand": {
     "name": "Elf Bar bc5000",
     "puffs": "5,000 puffs",
     "priceText": "$18",
     "dealText": "2 for $35"
-  }]
+  },
   "flavors": [
     {
       "flavor": "CLear",
