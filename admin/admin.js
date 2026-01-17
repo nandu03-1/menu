@@ -73,13 +73,17 @@ async function login() {
 
 async function forgotPassword() {
   showMsg("authMsg", "");
+
   const email = el("email").value.trim();
   if (!email) return showMsg("authMsg", "Enter your email first.");
 
-  // Redirect back to THIS admin page (GitHub Pages path)
-  const redirectTo = `${location.origin}/menu/admin/`;
+  // GitHub Pages is safer with an explicit file
+  const redirectTo = `${location.origin}/menu/admin/index.html`;
 
-  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo,
+  });
+
   if (error) return showMsg("authMsg", `Reset failed: ${error.message}`);
 
   showMsg("authMsg", "Password reset email sent. Check inbox/spam.");
