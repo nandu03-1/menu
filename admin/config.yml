@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: nandu03-1/menu
+  branch: main
+  auth_scope: repo
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "brands"
+    label: "Brands"
+    folder: "data/brands"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Brand ID", name: "id", widget: "string" }
+      - { label: "Brand Name", name: "name", widget: "string" }
+      - { label: "Card Image", name: "cardImage", widget: "image" }
+      - { label: "Puffs", name: "puffs", widget: "string" }
+      - { label: "Price Text", name: "priceText", widget: "string" }
+      - { label: "Deal Text", name: "dealText", widget: "string" }
+      - { label: "Sort Price", name: "sortPrice", widget: "number" }
+      - { label: "Is Clearance", name: "clearance", widget: "boolean", default: false }
+      - { label: "Brand File", name: "file", widget: "string" }
+
+  - name: "products"
+    label: "Products"
+    folder: "data/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "flavor", widget: "string" }
+      - { label: "Brand", name: "brandId", widget: "string" }
+      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Sold Out", name: "soldOut", widget: "boolean", default: false }
+
+  - name: "settings"
+    label: "Settings"
+    folder: "data"
+    files:
+      - name: "config"
+        label: "Site Config"
+        file: "data/config.json"
+        fields:
+          - { label: "THC-A Enabled", name: "thcaEnabled", widget: "boolean" }
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
