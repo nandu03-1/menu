@@ -3,6 +3,8 @@ backend:
   repo: nandu03-1/menu
   branch: main
   auth_scope: repo
+  client_id: Ov23limDVURCrJ92Q9t1
+  client_secret: 1a85bb32e6da1326d783b6653a76858d75416828
 
 media_folder: "images"
 public_folder: "/images"
