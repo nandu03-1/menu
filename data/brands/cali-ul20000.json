@@ -39,7 +39,7 @@
       "price": 25,
       "image": "images/cali20k/bw.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Coconut Banana",
@@ -74,7 +74,7 @@
       "price": 25,
       "image": "images/cali20k/fb.jpg",
       "tags": [],
-      "soldOut": true
+      "soldOut": false
     },
     {
       "flavor": "Frozen Blue Raspberry",
@@ -88,6 +88,13 @@
       "price": 25,
       "image": "images/cali20k/fg.jpg",
       "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Frozen Grape",
+      "price": 30,
+      "image": "images/cali20k/fg.jpg",
+      "tags": ["New"],
       "soldOut": false
     },
     {
@@ -109,7 +116,7 @@
       "price": 25,
       "image": "images/cali20k/fw.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Frozen White Grape",
@@ -207,14 +214,14 @@
       "price": 25,
       "image": "images/cali20k/sb.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Strawberry Watermelon",
       "price": 25,
       "image": "images/cali20k/sw.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
     {
       "flavor": "Tobacco",
@@ -235,7 +242,7 @@
       "price": 25,
       "image": "images/cali20k/tropb.jpg",
       "tags": [],
-      "soldOut": false
+      "soldOut": true
     },
      {
       "flavor": "Frozen Blackberry",
