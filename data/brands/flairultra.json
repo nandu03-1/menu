@@ -21,6 +21,27 @@
       "soldOut": false
     },
     {
+      "flavor": "Cherry Zest",
+      "price": 12,
+      "image": "images/flairultra/cz.png",
+      "tags": ["New"],
+      "soldOut": false
+    },
+    {
+      "flavor": "Artic Blue",
+      "price": 12,
+      "image": "images/flairultra/ab.png",
+      "tags": ["New"],
+      "soldOut": false
+    },
+    {
+      "flavor": "Black Currant",
+      "price": 12,
+      "image": "images/flairultra/bc.png",
+      "tags": ["New"],
+      "soldOut": false
+    },
+    {
       "flavor": "Black Ice",
       "price": 12,
       "image": "images/flairultra/bi.png",
