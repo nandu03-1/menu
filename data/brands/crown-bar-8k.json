@@ -1,48 +1,20 @@
 {
   "brand": {
     "name": "Al Fakher Crown Bar 8K",
-    "puffs": "8,000 puffs",
-    "priceText": "$20",
+    "puffs": "8k & 60K puffs",
+    "priceText": "$20 - $30",
     "dealText": ""
   },
   "flavors": [
-    { "flavor": "Berry Blue", "price": 20, "image": "images/crownBar/bb.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Blue Razz Blast", "price": 20, "image": "images/crownBar/brb.png", "tags": [], "soldOut": false },
-    { "flavor": "Blue Razz Lemonade", "price": 20, "image": "images/crownBar/brl.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Blueberry Cherry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Blueberry Gum", "price": 20, "image": "images/crownBar/bg.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Blueberry Mint", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Blueberry Raspberry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
     { "flavor": "Cherry Fiesta", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Cherry Ice", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-
-    { "flavor": "Cool Mango", "price": 20, "image": "images/crownBar/cm.jpeg", "tags": [], "soldOut": true },
-    { "flavor": "Fusion Pop", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Grape Berry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Grape Mint", "price": 20, "image": "images/crownBar/gm.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Gum Mint", "price": 20, "image": "images/crownBar/gumm.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Hubba", "price": 20, "image": "images/crownBar/hubba.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Ice Blue", "price": 20, "image": "images/crownBar/bi.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Lemon Lime", "price": 20, "image": "images/crownBar/ll.jpeg", "tags": [], "soldOut": false },
-
-    { "flavor": "Lemon Mint", "price": 20, "image": "images/crownBar/lm.jpeg", "tags": [], "soldOut": true },
-    { "flavor": "Lush Ice", "price": 20, "image": "images/crownBar/li.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Magic Love", "price": 20, "image": "images/crownBar/ml.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Mango Pineapple", "price": 20, "image": "images/crownBar/mp.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Mint", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Mixed Berry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Orange Mint", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-
-    { "flavor": "Peach Ice", "price": 20, "image": "images/crownBar/pi.jpg", "tags": [], "soldOut": true },
-    { "flavor": "Pineapple Ice", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Space Dream", "price": 20, "image": "images/crownBar/sd.jpeg", "tags": [], "soldOut": false },
-    { "flavor": "Spearmint", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Strawberry Cherry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-
-    { "flavor": "Strawberry Punch", "price": 20, "image": "images/crownBar/sp.jpeg", "tags": [], "soldOut": true },
-    { "flavor": "Two Apple", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Watermelon Cherry", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": false },
-    { "flavor": "Watermelon Kiwi", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": true },
-    { "flavor": "Watermelon Pineapple", "price": 20, "image": "images/crownBar/cba.webp", "tags": [], "soldOut": true }
+    { "flavor": "Hubba", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
+    { "flavor": "Ice Blue", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
+    { "flavor": "Mixed Berry", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
+    { "flavor": "Space Dream", "price": 20, "image": "images/crownBar/cf.jpeg", "tags": [], "soldOut": false },
+    { "flavor": "Lush Ice", "price": 30, "image": "images/crownBar/cf.jpeg", "tags": ["New","60k"], "soldOut": false },
+    { "flavor": "Strawberry Punch", "price": 30, "image": "images/crownBar/cf.jpeg", "tags": ["New","60k"], "soldOut": false },
+    { "flavor": "Watermelon kiwi", "price": 30, "image": "images/crownBar/cf.jpeg", "tags": ["New","60k"], "soldOut": false },
+    { "flavor": "Blueberry Lemonade", "price": 30, "image": "images/crownBar/cf.jpeg", "tags": ["New","60k"], "soldOut": false },
+    { "flavor": "Gum Mint", "price": 30, "image": "images/crownBar/cf.jpeg", "tags": ["New","60k"], "soldOut": false }
   ]
 }
