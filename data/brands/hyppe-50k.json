@@ -14,6 +14,27 @@
       "soldOut": false
     },
     {
+      "flavor": "Hawaiian Pog",
+      "price": 35,
+      "image": "images/hyppe50k/hp.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Kiwi Melon Blush",
+      "price": 35,
+      "image": "images/hyppe50k/kmb.webp",
+      "tags": [],
+      "soldOut": false
+    },
+     {
+      "flavor": "Peach Freeze",
+      "price": 35,
+      "image": "images/hyppe50k/pf.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
       "flavor": "Naked",
       "price": 35,
       "image": "images/hyppe50k/n.webp",
@@ -87,8 +108,15 @@
       "flavor": "Sour Summer Fab",
       "price": 35,
       "image": "images/hyppe50k/ssf.webp",
+      "tags": ["Flavor Profile: A blend of tangy tropical fruits coated in a sugary, sour candy shell."],
+      "soldOut": false
+    },
+    {
+      "flavor": "Sour Straw Mango",
+      "price": 35,
+      "image": "images/hyppe50k/ssm.webp",
       "tags": [],
-      "soldOut": true
+      "soldOut": false
     },
       {
       "flavor": "Sour Watermelon Freeze",
