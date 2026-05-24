@@ -5,7 +5,7 @@
     "priceText": "$30",
     "dealText": "2 for $50"
   },
-  "flavors": [
+  "flavors": [ 
     {
       "flavor": "Sour Apple Ice",
       "price": 30,
