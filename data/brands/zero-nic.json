@@ -13,6 +13,13 @@
       "tags": [],
       "soldOut": false
     },
+    {
+      "flavor": "UNC Lush Ice",
+      "price": 12,
+      "image": "images/zeronic/uncli.webp",
+      "tags": [],
+      "soldOut": false
+    },
      {
       "flavor": "UNC Cool Mint",
       "price": 12,
