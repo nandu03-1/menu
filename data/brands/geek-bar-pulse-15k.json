@@ -312,21 +312,21 @@
       "price": 25,
       "image": "images/geekbar-pulse-15k/sour-apple-b-pop.png",
       "tags": [],
-      "soldOut": true
+      "soldOut": false
     },
      {
       "flavor": "Frozen Cherry Apple",
       "price": 25,
       "image": "images/geekbar-pulse-15k/fca.webp",
       "tags": [],
-      "soldOut": true
+      "soldOut": false
     },
      {
       "flavor": "Peppermintz",
       "price": 25,
       "image": "images/geekbar-pulse-15k/pepper.webp",
       "tags": [],
-      "soldOut": true
+      "soldOut": false
     },
      {
       "flavor": "Omg B-Pop",
