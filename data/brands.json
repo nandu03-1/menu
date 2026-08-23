@@ -23,6 +23,28 @@
       "file": "./data/brands/lava-plus.json"
     },
     {
+      "cardImage": "./images/Oilio50k/mm.webp",
+      "sortPrice": 35,
+      "name": "Oilio Platytpus",
+      "puffs": "50k puffs",
+      "priceText": "$35",
+      "dealText": "",
+      "id": "Oilio",
+      "clearance": false,
+      "file": "./data/brands/oilio50k.json"
+    },
+    {
+      "cardImage": "./images/Geek50k/sb.jpg",
+      "sortPrice": 35,
+      "name": "Geek Bar X2",
+      "puffs": "50k puffs",
+      "priceText": "$35",
+      "dealText": "",
+      "id": "Geek 50k",
+      "clearance": false,
+      "file": "./data/brands/Geek50k.json"
+    },
+    {
       "cardImage": "./images/flairultra/cm.png",
       "sortPrice": 12,
       "name": "Flair Ultra",
@@ -44,31 +66,6 @@
       "clearance": false,
       "file": "./data/brands/hyppemaxflow.json"
     },
-    {
-      "cardImage": "./images/promos/cali8k.jpg",
-      "sortPrice": 18,
-      "name": "Cali UL8000",
-      "puffs": "8,000 puffs",
-      "priceText": "$18",
-      "dealText": "",
-      "id": "cali-ul8000",
-      "clearance": false,
-      "file": "./data/brands/cali-ul8000.json"
-    },
-    
-   /*
-    {
-      "cardImage": "./images/bc5000/logo.webp",
-      "sortPrice": 18,
-      "name": "Elf Bar BC5000",
-      "puffs": "5,000 puffs",
-      "priceText": "$18",
-      "dealText": "2 for $35",
-      "id": "elf-bar-bc5000",
-      "clearance": false,
-      "file": "./data/brands/bc5000.json"
-    },
-    */
     {
       "cardImage": "./images/lavabig/logo.jpeg",
       "sortPrice": 18,
@@ -145,17 +142,6 @@
       "id": "lava-click-kit-pod",
       "clearance": false,
       "file": "./data/brands/lavaclick.json"
-    },
-    {
-      "cardImage": "./images/promos/tyson30k.jpg",
-      "sortPrice": 28,
-      "name": "Tyson 30K",
-      "puffs": "30,000 puffs",
-      "priceText": "$28",
-      "dealText": "Sold Out",
-      "id": "tyson-30k",
-      "clearance": false,
-      "file": "./data/brands/tyson-30k.json"
     },
     {
       "cardImage": "./images/promos/geek25k.jpg",
