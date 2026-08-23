@@ -28,7 +28,7 @@
       "name": "Oilio Platytpus",
       "puffs": "50k puffs",
       "priceText": "$35",
-      "dealText": "",
+      "dealText": "New",
       "id": "Oilio",
       "clearance": false,
       "file": "./data/brands/oilio50k.json"
@@ -39,7 +39,7 @@
       "name": "Geek Bar X2",
       "puffs": "50k puffs",
       "priceText": "$35",
-      "dealText": "",
+      "dealText": "New",
       "id": "Geek 50k",
       "clearance": false,
       "file": "./data/brands/Geek50k.json"
