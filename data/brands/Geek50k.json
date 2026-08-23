@@ -1,0 +1,181 @@
+{
+  
+  "brand": {
+    "name": "Geek Bar X2 50k",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Blue Razz Ice",
+      "price": 35,
+      "image": "images/Geek50k/bri.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Bull",
+      "price": 35,
+      "image": "images/Geek50k/sb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Peach Bull",
+      "price": 35,
+      "image": "images/Geek50k/pb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Coco Berry Bull",
+      "price": 35,
+      "image": "images/Geek50k/ccb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blue Razz Bull",
+      "price": 35,
+      "image": "images/Geek50k/brb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Raspberry Bull",
+      "price": 35,
+      "image": "images/Geek50k/rb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Banana Taffy Freeze",
+      "price": 35,
+      "image": "images/Geek50k/btf.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Peach Slush",
+      "price": 35,
+      "image": "images/Geek50k/ps.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Orange Fcuking Fab",
+      "price": 35,
+      "image": "images/Geek50k/off.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Grape Slush",
+      "price": 35,
+      "image": "images/Geek50k/gs.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Bull",
+      "price": 35,
+      "image": "images/Geek50k/wb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry B-burst",
+      "price": 35,
+      "image": "images/Geek50k/sbb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "White Peach Raspberry",
+      "price": 35,
+      "image": "images/Geek50k/wpr.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Strawberry Watermelon",
+      "price": 35,
+      "image": "images/Geek50k/sw.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blackberry Blueberry",
+      "price": 35,
+      "image": "images/Geek50k/bb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Blueberry Jam",
+      "price": 35,
+      "image": "images/Geek50k/bj.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+    {
+      "flavor": "Dualcious",
+      "price": 35,
+      "image": "images/Geek50k/dual.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Pink & Blue",
+      "price": 35,
+      "image": "images/Geek50k/pb.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Stone Freeze",
+      "price": 35,
+      "image": "images/Geek50k/sf.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Sour Straws",
+      "price": 35,
+      "image": "images/Geek50k/sstraw.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Dualcious",
+      "price": 35,
+      "image": "images/Geek50k/dual.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Wild Cherry Slush",
+      "price": 35,
+      "image": "images/Geek50k/wcs.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Watermelon Ice",
+      "price": 35,
+      "image": "images/Geek50k/wi.jpg",
+      "tags": [],
+      "soldOut": true
+    },
+     {
+      "flavor": "Dualcious",
+      "price": 35,
+      "image": "images/Geek50k/dual.jpg",
+      "tags": [],
+      "soldOut": true
+    }
+
+    ]
+  
+}
