@@ -19,6 +19,34 @@
       "image": "images/lavamonster/lm.jpg",
       "tags": [],
       "soldOut": false
+    },
+    {
+      "flavor": "Clear",
+      "price": 25,
+      "image": "images/lavamonster/clear.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Fruit Blast",
+      "price": 25,
+      "image": "images/lavamonster/fb.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Miami Mint",
+      "price": 25,
+      "image": "images/lavamonster/cm.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Spearmint",
+      "price": 25,
+      "image": "images/lavamonster/spear.jpg",
+      "tags": [],
+      "soldOut": false
     }
   ]
 }
