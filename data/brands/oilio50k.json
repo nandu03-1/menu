@@ -1,0 +1,90 @@
+{
+  
+  "brand": {
+    "name": "Oilio Platypus",
+    "puffs": "50,000 puffs",
+    "priceText": "$35",
+    "dealText": ""
+  },
+  "flavors": [
+    {
+      "flavor": "Blueberry Jam",
+      "price": 35,
+      "image": "images/Oilio50k/bj.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cherry Bomb",
+      "price": 35,
+      "image": "images/Oilio50k/cb.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Cool Mint",
+      "price": 35,
+      "image": "images/Oilio50k/cm.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Grapefruit",
+      "price": 35,
+      "image": "images/Oilio50k/gb.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Iced Mint",
+      "price": 35,
+      "image": "images/Oilio50k/im.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Kiwi Passion Fruit Guava",
+      "price": 35,
+      "image": "images/Oilio50k/kpfg.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Lemon Soda",
+      "price": 35,
+      "image": "images/Oilio50k/ls.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Miami Mint",
+      "price": 35,
+      "image": "images/Oilio50k/mim.webp",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Salt Pineapple",
+      "price": 35,
+      "image": "images/Oilio50k/ps.jpeg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Sour Apple",
+      "price": 35,
+      "image": "images/Oilio50k/sa.jpg",
+      "tags": [],
+      "soldOut": false
+    },
+    {
+      "flavor": "Watermelon Lemon",
+      "price": 35,
+      "image": "images/Oilio50k/sa.jpg",
+      "tags": [],
+      "soldOut": false
+    }
+
+    ]
+  
+}
